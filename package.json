@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "diana-vitanyi-portfolio-website",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "Portfolio website created using Gatsby.js",
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {

@@ -1,7 +1,7 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react';
 import Layout from './../components/Layout';
-import { Typography } from '@material-ui/core';
+import { Typography, Button } from '@material-ui/core';
 // import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export default function Home({ data }) {
@@ -29,6 +29,15 @@ export default function Home({ data }) {
         <Typography variant="h4">h4</Typography>
         <Typography variant="h5">h5</Typography>
         <Typography variant="h6">h6</Typography>
+        <Button color="primary" variant="contained" disableElevation>
+          primary button
+        </Button>
+        <Button color="primary" variant="outlined" disableElevation>
+          primary button
+        </Button>
+        <Button color="primary" variant="text" disableElevation>
+          primary button
+        </Button>
         <Typography>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores nisi
           aspernatur quaerat natus! Eaque unde officia blanditiis nulla cum

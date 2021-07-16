@@ -4,20 +4,35 @@ import { createTheme } from '@material-ui/core/styles';
 const theme = createTheme({
   typography: {
     fontFamily: 'Raleway',
+    button: {
+      fontWeight: 700,
+      textTransform: 'none',
+    },
+    h1: {
+      fontWeight: 700,
+    },
+    h2: {
+      fontWeight: 700,
+    },
+    h3: {
+      fontWeight: 500,
+    },
   },
   palette: {
     primary: {
-      main: '#556cd6',
+      light: '#E4E4FF',
+      main: '#4544BD',
     },
     secondary: {
-      main: '#19857b',
+      main: '#939393',
     },
-    error: {
-      main: '#7a7a7a',
+    text: {
+      primary: '#333333',
+      secondary: '#939393',
     },
-    background: {
-      default: '#fff',
-    },
+  },
+  shape: {
+    borderRadius: 0,
   },
 });
 
