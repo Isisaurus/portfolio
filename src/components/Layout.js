@@ -1,16 +1,18 @@
 import React from 'react';
 import Navbar from './Navbar';
-import '../styles/style.css';
+import { Box } from '@material-ui/core';
 
 const Layout = props => {
   return (
-    <div className="layout">
+    <>
       <Navbar />
-      <main className="content">{props.children}</main>
+      <Box component="main" className="content">
+        {props.children}
+      </Box>
       <footer>
         <p>Copyright@2021 Diana Vitanyi</p>
       </footer>
-    </div>
+    </>
   );
 };
 

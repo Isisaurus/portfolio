@@ -1,27 +1,43 @@
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import useStyles from './../styles/Navbar.styles';
+
 import React from 'react';
+import { Link } from 'gatsby-theme-material-ui';
+
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
+
+import Logo from './Logo';
 
 const Navbar = () => {
-  const data = useStaticQuery(graphql`
-    query MyQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
+  const classes = useStyles();
 
-  const { title } = data.site.siteMetadata;
   return (
-    <nav>
-      <h1>{title}</h1>
-      <div className="links">
-        <Link to="/">home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/projects">Projects</Link>
-      </div>
-    </nav>
+    <AppBar
+      component="nav"
+      position="static"
+      className={classes.AppBar}
+      color="transparent"
+    >
+      <Logo />
+      <Toolbar className={classes.Toolbar}>
+        <Link to="/" className={classes.link}>
+          <Typography variant="h6" component="span">
+            Projects
+          </Typography>
+        </Link>
+
+        <Link to="/about" className={classes.link}>
+          <Typography variant="h6" component="span">
+            About
+          </Typography>
+        </Link>
+
+        <Link to="/projects" className={classes.link}>
+          <Typography variant="h6" component="span">
+            Projects
+          </Typography>
+        </Link>
+      </Toolbar>
+    </AppBar>
   );
 };
 
