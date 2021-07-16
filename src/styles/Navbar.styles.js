@@ -8,9 +8,7 @@ export default makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    padding: '1rem 0',
-    width: '95%',
-    margin: '0 auto',
+    padding: '.5rem 2rem',
   },
   Toolbar: {
     marginLeft: 'auto',
@@ -18,10 +16,48 @@ export default makeStyles(theme => ({
   },
   link: {
     textDecoration: 'none',
-    padding: '.8em 1.5rem',
+    padding: '.8em 0',
+    marginLeft: '3.5em',
     color: 'inherit',
+    position: 'relative',
+    '&::after': {
+      content: '" "',
+      position: 'absolute',
+      bottom: '0',
+      left: '0',
+      display: 'block',
+      height: '5px',
+      width: '0',
+      backgroundColor: theme.palette.text.primary,
+      transition: 'all .3s ease',
+    },
     '&:hover': {
       textDecoration: 'none',
+      '&::after': {
+        width: '100%',
+        transition: 'all .3s ease',
+      },
+      transition: 'all .3s ease',
+    },
+    '&:active': {
+      '&::after': {
+        width: '100%',
+      },
+      transition: 'all .3s ease',
+    },
+  },
+  active: {
+    color: theme.palette.primary.main,
+    '&::after': {
+      content: '" "',
+      position: 'absolute',
+      bottom: '0',
+      left: '0',
+      display: 'block',
+      height: '5px',
+      width: '50%',
+      backgroundColor: theme.palette.text.primary,
+      transition: 'all 0.3s ease',
     },
   },
 }));

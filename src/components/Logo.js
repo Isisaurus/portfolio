@@ -17,7 +17,7 @@ export default function Logo() {
     <Typography
       component="h1"
       variant="overline"
-      color="textSecondary"
+      color="textPrimary"
       style={{ fontSize: '1rem', letterSpacing: '.2em' }}
     >
       {title}

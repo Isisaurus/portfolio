@@ -17,6 +17,11 @@ const theme = createTheme({
     h3: {
       fontWeight: 500,
     },
+    h6: {
+      fontWeight: 500,
+      textTransform: 'uppercase',
+      letterSpacing: '.1em',
+    },
   },
   palette: {
     primary: {

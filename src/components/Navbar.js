@@ -19,21 +19,29 @@ const Navbar = () => {
     >
       <Logo />
       <Toolbar className={classes.Toolbar}>
-        <Link to="/" className={classes.link}>
+        <Link to="/" className={classes.link} activeClassName={classes.active}>
           <Typography variant="h6" component="span">
             Projects
           </Typography>
         </Link>
 
-        <Link to="/about" className={classes.link}>
+        <Link
+          to="/about"
+          className={classes.link}
+          activeClassName={classes.active}
+        >
           <Typography variant="h6" component="span">
             About
           </Typography>
         </Link>
 
-        <Link to="/projects" className={classes.link}>
+        <Link
+          to="/contact"
+          className={classes.link}
+          activeClassName={classes.active}
+        >
           <Typography variant="h6" component="span">
-            Projects
+            Contact
           </Typography>
         </Link>
       </Toolbar>
