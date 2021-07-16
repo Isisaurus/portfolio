@@ -11,6 +11,7 @@ export default function ProjectDetails({ data }) {
       <div>
         <h2>{title}</h2>
         <h3>{stack}</h3>
+        <h3>{date.toLocaleString('nl-Nl', { dateStyle: 'short' })}</h3>
         <div>Image</div>
       </div>
       <div dangerouslySetInnerHTML={{ __html: html }} />

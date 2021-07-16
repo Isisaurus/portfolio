@@ -14,13 +14,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `notes`,
-        path: `${__dirname}/src/notes/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `projects`,
         path: `${__dirname}/src/projects/`,
       },
@@ -35,7 +28,7 @@ module.exports = {
   ],
   siteMetadata: {
     title: 'Diana Vitanyi',
-    description: 'web dev portfolio',
+    description: 'web development portfolio',
     copyright: 'This website is copyright 2021 Diana Vitanyi',
     contact: 'dianavitanyi@gmail.com',
   },
