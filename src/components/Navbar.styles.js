@@ -29,21 +29,21 @@ export default makeStyles(theme => ({
       height: '5px',
       width: '0',
       backgroundColor: theme.palette.text.primary,
-      transition: 'all .3s ease',
+      transition: 'all 0.3s ease',
     },
     '&:hover': {
       textDecoration: 'none',
       '&::after': {
         width: '100%',
-        transition: 'all .3s ease',
+        transition: 'all 0.3s ease',
       },
-      transition: 'all .3s ease',
+      transition: 'all 0.3s ease',
     },
     '&:active': {
       '&::after': {
         width: '100%',
       },
-      transition: 'all .3s ease',
+      transition: 'all 0.3s ease',
     },
   },
   active: {

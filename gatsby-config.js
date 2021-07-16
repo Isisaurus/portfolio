@@ -4,6 +4,22 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
+//  {
+//   resolve: `gatsby-theme-material-ui`,
+//   options: {
+//     webFontsConfig: {
+//       fonts: {
+//         google: [
+//           {
+//             family: `Raleway`,
+//             variants: [`300`, `400`, `500`, `700`],
+//           },
+//         ],
+//       },
+//     },
+//   },
+// },
+
 module.exports = {
   /* Your site config here */
   plugins: [
@@ -25,23 +41,7 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
-    'gatsby-plugin-top-layout',
-    'gatsby-plugin-react-helmet',
-    {
-      resolve: `gatsby-theme-material-ui`,
-      options: {
-        webFontsConfig: {
-          fonts: {
-            google: [
-              {
-                family: `Raleway`,
-                variants: [`300`, `400`, `500`],
-              },
-            ],
-          },
-        },
-      },
-    },
+    `gatsby-theme-material-ui`,
   ],
   siteMetadata: {
     title: 'Diana Vitanyi',
