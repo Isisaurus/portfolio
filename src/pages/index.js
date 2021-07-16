@@ -1,6 +1,7 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react';
 import Layout from './../components/Layout';
+import { Typography } from '@material-ui/core';
 // import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export default function Home({ data }) {
@@ -11,6 +12,7 @@ export default function Home({ data }) {
   return (
     <Layout>
       <section className="intro">
+        <Typography variant="h1">hello</Typography>
         {projects.map(project => (
           <Link to={`/${project.frontmatter.slug}`} key={project.id}>
             <h3>{project.frontmatter.title}</h3>
