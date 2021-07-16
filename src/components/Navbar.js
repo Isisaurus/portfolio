@@ -62,6 +62,14 @@ const useStyles = makeStyles(theme => ({
       backgroundColor: theme.palette.text.primary,
       transition: 'all 0.3s ease',
     },
+    '&:hover': {
+      textDecoration: 'none',
+      '&::after': {
+        width: '100%',
+        transition: 'all 0.3s ease',
+      },
+      transition: 'all 0.3s ease',
+    },
   },
 }));
 
