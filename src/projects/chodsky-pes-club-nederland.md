@@ -1,7 +1,9 @@
 ---
 title: Chodksy Pes Club Nederland Club Website
-stack: MERN
+stack: MongoDB, Mongoose, PUG, Node.js, Express.js, SASS
 slug: chodsky-pes-club-nederland
+live: https://cpcn.herokuapp.com/
+github: https://github.com/Isisaurus/tech-recruitment-website
 date: 2021-01-01T00:00:00+00:00
 ---
 

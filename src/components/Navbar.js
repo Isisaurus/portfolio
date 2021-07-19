@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
       display: 'block',
       height: '5px',
       width: '0',
-      backgroundColor: theme.palette.text.primary,
+      backgroundColor: theme.palette.text.secondary,
       transition: 'all 0.3s ease',
     },
     '&:hover': {
