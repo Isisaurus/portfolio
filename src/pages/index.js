@@ -2,6 +2,8 @@ import { graphql, Link } from 'gatsby';
 import React from 'react';
 import Layout from './../components/Layout';
 import Introduction from '../components/Introduction';
+import ProjectCard from '../components/ProjectCard';
+import { Box } from '@material-ui/core';
 // import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export default function Home({ data }) {
@@ -12,14 +14,11 @@ export default function Home({ data }) {
   return (
     <Layout>
       <Introduction />
-      <section>
+      <Box component="section">
         {projects.map(project => (
-          <Link to={`/${project.frontmatter.slug}`} key={project.id}>
-            <h3>{project.frontmatter.title}</h3>
-            <p>{project.frontmatter.stack}</p>
-          </Link>
+          <ProjectCard project={project} key={project.id} />
         ))}
-      </section>
+      </Box>
     </Layout>
   );
 }
