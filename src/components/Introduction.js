@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
     minHeight: '65vh',
     display: 'flex',
     alignItems: 'center',
-    marginBottom: '2rem',
+    marginBottom: '10%',
   },
 }));
 
