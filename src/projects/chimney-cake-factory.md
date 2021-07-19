@@ -4,6 +4,7 @@ stack: React.js, Commerce.js, MaterialUI
 slug: chimney-cake-factory
 live: https://chimney-cake-factory.netlify.app/
 github: https://github.com/Isisaurus/chimneycake-factory
+image: ../images/thumbnails/chimney-cake-factory.jpg
 date: 2021-01-01T00:00:00+00:00
 ---
 

@@ -1,25 +1,3 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/gatsby-config/
- */
-
-//  {
-//   resolve: `gatsby-theme-material-ui`,
-//   options: {
-//     webFontsConfig: {
-//       fonts: {
-//         google: [
-//           {
-//             family: `Raleway`,
-//             variants: [`300`, `400`, `500`, `700`],
-//           },
-//         ],
-//       },
-//     },
-//   },
-// },
-
 module.exports = {
   /* Your site config here */
   plugins: [

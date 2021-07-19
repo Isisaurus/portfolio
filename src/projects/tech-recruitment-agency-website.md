@@ -4,6 +4,7 @@ stack: Next.js, SWR, Contenful, MaterialUI
 slug: tech-recruitment-agency
 live: https://tech-recruitment.vercel.app/
 github: https://github.com/Isisaurus/tech-recruitment-website
+image: ../images/thumbnails/tech-recruitment-agency.jpg
 date: 2021-01-01T00:00:00+00:00
 ---
 

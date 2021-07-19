@@ -59,7 +59,7 @@ const useStyles = makeStyles(theme => ({
       display: 'block',
       height: '5px',
       width: '50%',
-      backgroundColor: theme.palette.text.primary,
+      backgroundColor: theme.palette.text.secondary,
       transition: 'all 0.3s ease',
     },
     '&:hover': {

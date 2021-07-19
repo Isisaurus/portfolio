@@ -1,14 +1,23 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import { graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export default function ProjectDetails({ data }) {
   const { html } = data.markdownRemark;
-  const { title, stack, date } = data.markdownRemark.frontmatter;
+  const {
+    title,
+    stack,
+    date,
+    live,
+    github,
+    image,
+  } = data.markdownRemark.frontmatter;
 
   return (
     <Layout>
       <div>
+        <GatsbyImage image={getImage(image)} alt={`${title} thumbnail`} />
         <h2>{title}</h2>
         <h3>{stack}</h3>
         <h3>{date.toLocaleString('nl-Nl', { dateStyle: 'short' })}</h3>
@@ -24,9 +33,21 @@ export const query = graphql`
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       frontmatter {
-        stack
         title
-        date
+        stack
+        slug
+        date(locale: "nl-NL")
+        live
+        github
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              placeholder: BLURRED
+              layout: FULL_WIDTH
+              formats: [WEBP, AUTO]
+            )
+          }
+        }
       }
     }
   }

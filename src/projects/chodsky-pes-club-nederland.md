@@ -4,6 +4,7 @@ stack: MongoDB, Mongoose, PUG, Node.js, Express.js, SASS
 slug: chodsky-pes-club-nederland
 live: https://cpcn.herokuapp.com/
 github: https://github.com/Isisaurus/tech-recruitment-website
+image: ../images/thumbnails/chodsky-pes-club-nederland.jpg
 date: 2021-01-01T00:00:00+00:00
 ---
 

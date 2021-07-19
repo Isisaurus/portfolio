@@ -1,4 +1,4 @@
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import React from 'react';
 import Layout from './../components/Layout';
 import Introduction from '../components/Introduction';
@@ -29,12 +29,24 @@ export const query = graphql`
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {
+        id
         frontmatter {
           title
           stack
           slug
+          date(locale: "nl-NL")
+          live
+          github
+          image {
+            childImageSharp {
+              gatsbyImageData(
+                placeholder: BLURRED
+                layout: FULL_WIDTH
+                formats: [WEBP, AUTO]
+              )
+            }
+          }
         }
-        id
       }
     }
   }
