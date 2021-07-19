@@ -6,6 +6,7 @@ live: https://tech-recruitment.vercel.app/
 github: https://github.com/Isisaurus/tech-recruitment-website
 image: ../images/thumbnails/tech-recruitment-agency.jpg
 date: 2021-01-01T00:00:00+00:00
+description: A recruitment agency website to list, serach and filter the currently available vacancies, showcase detailed information about the positions and give the users the option to send a complete job application through the platform.
 ---
 
 ## The goal of the project

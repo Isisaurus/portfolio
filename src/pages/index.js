@@ -7,8 +7,6 @@ import { Box } from '@material-ui/core';
 // import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export default function Home({ data }) {
-  console.log(data);
-
   const projects = data.projects.nodes;
 
   return (
@@ -37,6 +35,7 @@ export const query = graphql`
           date(locale: "nl-NL")
           live
           github
+          description
           image {
             childImageSharp {
               gatsbyImageData(

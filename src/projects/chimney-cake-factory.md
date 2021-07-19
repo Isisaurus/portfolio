@@ -6,6 +6,7 @@ live: https://chimney-cake-factory.netlify.app/
 github: https://github.com/Isisaurus/chimneycake-factory
 image: ../images/thumbnails/chimney-cake-factory.jpg
 date: 2021-01-01T00:00:00+00:00
+description: This website is a Single Page Application (SPA) built using `create-react-app` that works together with the Commerce.js API on the client side to create a start-to-finish webshop experience by making API calls to the headless backend service.
 ---
 
 ## Completing a test purchase
