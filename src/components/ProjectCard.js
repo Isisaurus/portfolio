@@ -56,9 +56,18 @@ const useStyles = makeStyles(theme => ({
       fontSize: '1.2rem',
     },
   },
+  stackImgContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    '& > *': {
+      marginRight: '1rem',
+    },
+    '::last-child': {
+      marginRight: '0rem',
+    },
+  },
   stackImg: {
     maxHeight: '2rem',
-    marginLeft: '1rem',
     transition: 'all 0.2s ease-out',
     opacity: '.8',
     '&:hover': {
@@ -146,7 +155,7 @@ function ProjectCard({ project }) {
             {description}
           </Typography>
         </Container>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <Container className={classes.stackImgContainer}>
           {stackArr.length
             ? stackArr.map((el, i) => (
                 <img
@@ -160,7 +169,7 @@ function ProjectCard({ project }) {
                 />
               ))
             : ''}
-        </div>
+        </Container>
       </div>
     </Container>
   );
