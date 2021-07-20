@@ -29,8 +29,12 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     fontSize: '2.5rem',
-    marginBottom: '.5em',
+    marginBottom: '1em',
     lineHeight: '1.5',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1.5rem',
+      color: theme.palette.primary.main,
+    },
   },
   thumbnail: {
     boxShadow: '0.5rem .8rem 1rem rgba(0,0,0, 0.2)',
@@ -59,10 +63,13 @@ const useStyles = makeStyles(theme => ({
   stackImgContainer: {
     display: 'flex',
     alignItems: 'center',
+    flexWrap: 'wrap',
+    marginTop: '1rem',
     '& > *': {
       marginRight: '1rem',
+      marginBottom: '.5rem',
     },
-    '::last-child': {
+    '&:last-child': {
       marginRight: '0rem',
     },
   },
@@ -70,10 +77,19 @@ const useStyles = makeStyles(theme => ({
     maxHeight: '2rem',
     transition: 'all 0.2s ease-out',
     opacity: '.8',
+    [theme.breakpoints.down('xs')]: {
+      maxHeight: '1.5rem',
+    },
     '&:hover': {
       transition: 'all 0.2s ease-in',
       transform: 'scale(1.2)',
       opacity: '1',
+    },
+  },
+  readmoreBtn: {
+    marginLeft: 'auto',
+    [theme.breakpoints.down('xs')]: {
+      marginLeft: '.5rem',
     },
   },
 }));
@@ -109,13 +125,14 @@ function ProjectCard({ project }) {
             className={classes.thumbnail}
           />
         </Link>
-        <Divider style={{ margin: '3rem 0 0' }} />
+        <Divider style={{ margin: '2rem 0 0' }} />
         <Container className={classes.buttonContainer}>
           <Button
             startIcon={<LanguageIcon />}
             color="primary"
             variant="text"
-            size="large"
+            size="small"
+            style={{ marginRight: '.5rem' }}
           >
             <Link
               to={`${live}`}
@@ -129,7 +146,7 @@ function ProjectCard({ project }) {
             startIcon={<CodeIcon />}
             color="primary"
             variant="text"
-            size="large"
+            size="small"
           >
             <Link
               to={`${github}`}
@@ -142,8 +159,8 @@ function ProjectCard({ project }) {
           <Button
             color="primary"
             variant="text"
-            size="large"
-            style={{ marginLeft: 'auto' }}
+            size="small"
+            className={classes.readmoreBtn}
           >
             <Link to={slug} style={{ textDecoration: 'none' }}>
               read more
