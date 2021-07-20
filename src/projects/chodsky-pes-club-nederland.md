@@ -1,6 +1,6 @@
 ---
-title: Chodksy Pes Club Nederland Club Website & API
-stack: MongoDB, Mongoose, PUG, Node.js, Express.js, SASS
+title: CPCN.nl & API
+stack: MongoDB,Mongoose,PUG,Node.js,Express.js,SASS
 slug: chodsky-pes-club-nederland
 live: https://cpcn.herokuapp.com/
 github: https://github.com/Isisaurus/tech-recruitment-website

@@ -28,16 +28,19 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
   },
   title: {
-    fontSize: '2rem',
-    marginBottom: '1em',
+    fontSize: '2.5rem',
+    marginBottom: '.5em',
+    lineHeight: '1.5',
   },
   thumbnail: {
-    boxShadow: '0.5rem 1rem 1.5rem rgba(0,0,0, 0.1)',
+    boxShadow: '0.5rem .8rem 1rem rgba(0,0,0, 0.2)',
     transition: 'all 0.2s ease-out',
+    opacity: '.9',
     '&:hover': {
-      boxShadow: '-0.25rem 1rem 1.5rem rgba(0,0,0, 0.15)',
+      opacity: '1',
+      boxShadow: '0.25rem 1rem 1.5rem rgba(0,0,0, 0.1)',
       transition: 'all 0.2s ease-in',
-      transform: 'translateX(5px)',
+      transform: 'translateY(-3px)',
     },
   },
   buttonContainer: {
@@ -51,6 +54,17 @@ const useStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.up('md')]: {
       fontSize: '1.2rem',
+    },
+  },
+  stackImg: {
+    maxHeight: '2rem',
+    marginLeft: '1rem',
+    transition: 'all 0.2s ease-out',
+    opacity: '.8',
+    '&:hover': {
+      transition: 'all 0.2s ease-in',
+      transform: 'scale(1.2)',
+      opacity: '1',
     },
   },
 }));
@@ -69,9 +83,13 @@ function ProjectCard({ project }) {
     description,
   } = project.frontmatter;
 
+  const splitStr = stack.split(',');
+  const spread = [...splitStr];
+  const stackArr = Array.from(spread);
+
   return (
     <Container className={classes.container}>
-      <div style={{ maxWidth: '70rem' }}>
+      <div style={{ maxWidth: '60rem' }}>
         <Link to={slug} className={classes.projectLink}>
           <Typography variant="h1" component="h3" className={classes.title}>
             {title}
@@ -128,6 +146,21 @@ function ProjectCard({ project }) {
             {description}
           </Typography>
         </Container>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          {stackArr.length
+            ? stackArr.map((el, i) => (
+                <img
+                  key={i}
+                  alt={el.toLowerCase().replace('.', '_')}
+                  title={el}
+                  src={`/stack_images/${el
+                    .toLowerCase()
+                    .replace('.', '_')}.png`}
+                  className={classes.stackImg}
+                />
+              ))
+            : ''}
+        </div>
       </div>
     </Container>
   );
