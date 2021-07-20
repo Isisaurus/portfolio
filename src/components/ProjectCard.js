@@ -33,6 +33,12 @@ const useStyles = makeStyles(theme => ({
   },
   thumbnail: {
     boxShadow: '0.5rem 1rem 1.5rem rgba(0,0,0, 0.1)',
+    transition: 'all 0.2s ease-out',
+    '&:hover': {
+      boxShadow: '-0.25rem 1rem 1.5rem rgba(0,0,0, 0.15)',
+      transition: 'all 0.2s ease-in',
+      transform: 'translateX(5px)',
+    },
   },
   buttonContainer: {
     display: 'flex',
@@ -65,7 +71,7 @@ function ProjectCard({ project }) {
 
   return (
     <Container className={classes.container}>
-      <div style={{ maxWidth: '60rem' }}>
+      <div style={{ maxWidth: '70rem' }}>
         <Link to={slug} className={classes.projectLink}>
           <Typography variant="h1" component="h3" className={classes.title}>
             {title}
@@ -75,57 +81,53 @@ function ProjectCard({ project }) {
             alt={`${title} thumbnail`}
             className={classes.thumbnail}
           />
-          <Divider style={{ margin: '3rem 0 0' }} />
-          <Container className={classes.buttonContainer}>
-            <Button
-              startIcon={<LanguageIcon />}
-              color="primary"
-              variant="text"
-              size="large"
-            >
-              <Link
-                to={`${live}`}
-                target="__blank"
-                style={{ textDecoration: 'none' }}
-              >
-                live server
-              </Link>
-            </Button>
-            <Button
-              startIcon={<CodeIcon />}
-              color="primary"
-              variant="text"
-              size="large"
-            >
-              <Link
-                to={`${github}`}
-                target="__blank"
-                style={{ textDecoration: 'none' }}
-              >
-                code
-              </Link>
-            </Button>
-            <Button
-              color="primary"
-              variant="text"
-              size="large"
-              style={{ marginLeft: 'auto' }}
-            >
-              <Link to={slug} style={{ textDecoration: 'none' }}>
-                read more
-              </Link>
-            </Button>
-          </Container>
-          <Container>
-            <Typography
-              variant="body1"
-              paragraph
-              className={classes.description}
-            >
-              {description}
-            </Typography>
-          </Container>
         </Link>
+        <Divider style={{ margin: '3rem 0 0' }} />
+        <Container className={classes.buttonContainer}>
+          <Button
+            startIcon={<LanguageIcon />}
+            color="primary"
+            variant="text"
+            size="large"
+          >
+            <Link
+              to={`${live}`}
+              target="__blank"
+              style={{ textDecoration: 'none' }}
+            >
+              live server
+            </Link>
+          </Button>
+          <Button
+            startIcon={<CodeIcon />}
+            color="primary"
+            variant="text"
+            size="large"
+          >
+            <Link
+              to={`${github}`}
+              target="__blank"
+              style={{ textDecoration: 'none' }}
+            >
+              code
+            </Link>
+          </Button>
+          <Button
+            color="primary"
+            variant="text"
+            size="large"
+            style={{ marginLeft: 'auto' }}
+          >
+            <Link to={slug} style={{ textDecoration: 'none' }}>
+              read more
+            </Link>
+          </Button>
+        </Container>
+        <Container>
+          <Typography variant="body1" paragraph className={classes.description}>
+            {description}
+          </Typography>
+        </Container>
       </div>
     </Container>
   );

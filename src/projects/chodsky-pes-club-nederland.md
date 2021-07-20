@@ -1,5 +1,5 @@
 ---
-title: Chodksy Pes Club Nederland Club Website
+title: Chodksy Pes Club Nederland Club Website & API
 stack: MongoDB, Mongoose, PUG, Node.js, Express.js, SASS
 slug: chodsky-pes-club-nederland
 live: https://cpcn.herokuapp.com/
