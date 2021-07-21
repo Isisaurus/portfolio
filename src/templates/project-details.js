@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
@@ -14,6 +14,7 @@ import {
 import { Link } from 'gatsby-theme-material-ui';
 import LanguageIcon from '@material-ui/icons/Language';
 import CodeIcon from '@material-ui/icons/Code';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
 const useStyles = makeStyles(theme => ({
   intro: {
@@ -94,10 +95,45 @@ const useStyles = makeStyles(theme => ({
       opacity: '1',
     },
   },
+  fabContainer: {
+    display: 'flex',
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+    position: 'sticky',
+    bottom: '20px',
+  },
+  toTopBtn: {
+    opacity: '.6',
+    marginRight: '20px',
+    '&:hover': {
+      opacity: 1,
+    },
+  },
 }));
 
 export default function ProjectDetails({ data }) {
   const classes = useStyles();
+
+  const [visible, setVisible] = useState(false);
+
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled > 300) {
+      setVisible(true);
+    } else if (scrolled <= 300) {
+      setVisible(false);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  window.addEventListener('scroll', toggleVisible);
+
   const { html } = data.markdownRemark;
   const { title, stack, live, github, image } = data.markdownRemark.frontmatter;
   const options = {
@@ -254,6 +290,17 @@ export default function ProjectDetails({ data }) {
           </Button>
         </div>
       </Container>
+      <div className={classes.fabContainer}>
+        <Fab
+          color="primary"
+          aria-label="up"
+          className={classes.toTopBtn}
+          style={{ display: visible ? 'inline-block' : 'none' }}
+          onClick={scrollToTop}
+        >
+          <ArrowUpwardIcon />
+        </Fab>
+      </div>
     </Layout>
   );
 }
