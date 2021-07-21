@@ -7,13 +7,19 @@ import {
   Container,
   makeStyles,
   Typography,
-  Link,
   Divider,
+  Button,
 } from '@material-ui/core';
+import { Link } from 'gatsby-theme-material-ui';
+import LanguageIcon from '@material-ui/icons/Language';
+import CodeIcon from '@material-ui/icons/Code';
 
 const useStyles = makeStyles(theme => ({
   intro: {
     margin: '4rem 0',
+  },
+  buttonContainer: {
+    margin: '1rem 0 2rem',
   },
   title: {
     fontSize: '2.5rem',
@@ -50,7 +56,7 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 300,
   },
   divider: {
-    margin: '4rem 0',
+    margin: '2.5rem 0',
     width: '40%',
   },
 }));
@@ -58,16 +64,7 @@ const useStyles = makeStyles(theme => ({
 export default function ProjectDetails({ data }) {
   const classes = useStyles();
   const { html } = data.markdownRemark;
-  const {
-    title,
-    stack,
-    date,
-    live,
-    github,
-    image,
-  } = data.markdownRemark.frontmatter;
-  const styledDate = new Date(date);
-
+  const { title, stack, live, github, image } = data.markdownRemark.frontmatter;
   const options = {
     overrides: {
       h2: {
@@ -130,16 +127,40 @@ export default function ProjectDetails({ data }) {
           <Typography variant="h1" component="h2" className={classes.title}>
             {title}
           </Typography>
-          <Typography
-            variant="overline"
-            style={{ fontSize: '1rem', textTransform: 'none' }}
-          >
-            {styledDate.toLocaleDateString('nl-Nl', { dateStyle: 'medium' })}
-          </Typography>
+          <div className={classes.buttonContainer}>
+            <Button
+              startIcon={<LanguageIcon />}
+              color="primary"
+              variant="text"
+              size="small"
+              style={{ marginRight: '.5rem' }}
+            >
+              <Link
+                to={`${live}`}
+                target="__blank"
+                style={{ textDecoration: 'none' }}
+              >
+                live server
+              </Link>
+            </Button>
+            <Button
+              startIcon={<CodeIcon />}
+              color="primary"
+              variant="text"
+              size="small"
+            >
+              <Link
+                to={`${github}`}
+                target="__blank"
+                style={{ textDecoration: 'none' }}
+              >
+                code
+              </Link>
+            </Button>
+          </div>
           <GatsbyImage image={getImage(image)} alt={`${title} thumbnail`} />
         </div>
         <ReactMarkdown id="recipe" options={options} children={html} />
-        {/* <div dangerouslySetInnerHTML={{ __html: html }} /> */}
       </Container>
     </Layout>
   );

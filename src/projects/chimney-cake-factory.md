@@ -67,7 +67,7 @@ The website allows you to:
 - submit a payment using Stripe
 - recieve the order information and the reciet via the email address provided
 - get an overview about the company on the /about page
-- learn how to make your own chimney cake at home on the /recipe page
+- download a recipe to make your own chimney cake on the /recipe page
 
 ---
 
