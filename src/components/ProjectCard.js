@@ -101,7 +101,6 @@ function ProjectCard({ project }) {
     title,
     stack,
     slug,
-    date,
     live,
     github,
     image,

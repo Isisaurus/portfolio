@@ -9,13 +9,29 @@ date: 2021-01-01T00:00:00+00:00
 description: A recruitment agency website to list, serach and filter the currently available vacancies, showcase detailed information about the positions and give the users the option to send a complete job application through the platform.
 ---
 
-## The goal of the project
+## Table of contents
+
+1. [The goal of the project](#the-goal-of-the-project)
+2. [Achievements](#achievements)
+3. [Technologies used](#technologies-used)
+4. [User stories](#user-stories)
+5. [Features of the Website](#features-of-the-website)
+6. [Future of the project](#future-of-the-project)
+7. [Inspiration](#inspiration)
+8. [Solutions and considerations](#solutions-and-considerations)
+9. [Documentation used](#documentation-used)
+10. [Articles used](#articles-used)
+11. [Media Resources](#media-resources)
+
+---
+
+<!-- [## The goal of the project](#the-goal-of-the-project) -->
 
 Create a recruitment agency website to list, serach and filter the currently available vacancies, showcase detailed information about the positions and give the users the option to send a complete job application through the platform.
 
 My goal with this project was to work closely with data in a React application, learn about implementing filters and pagination using different libraries and connect multiple platforms to create a smooth browsing experience for the visitors of the site surrounded by a simple, but modern minimalist UI design.
 
-## Achievements
+<!-- [## Achievements](#achievements) -->
 
 The website allows you to:
 
@@ -33,15 +49,18 @@ The website allows you to:
 - contact the agency using a contact form
 - get a custom 404 and error page with meaningful information about the problem occured and redirect to hom page after 4 seconds
 
-## Technologies used to create the project
+<!-- [## Technologies used](#technologies-used) -->
 
 - The website is a Next.js project created by [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
 - The components are styled using a custom [Material-UI theme](https://material-ui.com/).
 - The vacancy data displayed is fetched from a [Contentful](https://www.contentful.com/) collection using the [Contentful Content Delivery API](https://www.contentful.com/developers/docs/references/content-delivery-api/).
 - The filtering and pagination are implemented using the [Vercel SWR React Hooks Library](https://swr.vercel.app/).
 - The website is delpoyed using [Vercel](https://vercel.com/). You can access the website via [https://tech-recruitment.vercel.app/](https://tech-recruitment.vercel.app/).
 
-## User stories - the app's functionality from the user's perspective
+<!-- [## User stories](#user-stories) -->
+
+The app's functionality from the user's perspective:
 
 - As a user, I want to see an overview of the recruitment company so that I get can a general idea what type of jobs there are available.
 - As a user, I want to search for job titles and keywords so that I can find jobs I am interested in.
@@ -52,7 +71,9 @@ The website allows you to:
 - As a user, I want to be able to contact the company through the website, so that I can ask questions.
 - As a user, I want to receive feedback after submitting a form so that I know my information was successfully sent.
 
-## Features of the Website (from user stories)
+<!-- [## Features of the Website](#features-of-the-website) -->
+
+(from user stories)
 
 - Landing page displaying: the goal of the company, the recruitment team, the partner firms, types of jobs and services provided.
 - Sign up form to gather contact information, upload CV, pick from job preferences.
@@ -65,7 +86,7 @@ The website allows you to:
 - Subscription form to get on the mailing list.
 - Confirmation message displayed in the UI after submitting application, contact or subsription forms.
 
-## Future of the project
+<!-- [## Future of the project](#future-of-the-project) -->
 
 Future improvements:
 
@@ -85,13 +106,13 @@ The following features implemented would improve the usability and user experien
 - Back-end middleware function responsible for email sending using nodemailer.
 - Implementation of automated response emails.
 
-## Inspiration
+<!-- [## Inspiration](#inspiration) -->
 
 The design of the project was inspired by the website of [Codecareer IT recruitment agency](https://codecareer.nl/).
 
-## Solutions and considerations
+<!-- [## Solutions and considerations](#solutions-and-considerations) -->
 
-### SWR - filtering and pagination on the client side from Cache
+<!-- ### SWR - filtering and pagination on the client side from Cache -->
 
 SWR (stale-while-revalidate) is an HTTP Cache revalidation strategy to fetch, revalidate and manage data on the client side instead of the usual combination of React hooks, useState and useEffect.
 
@@ -108,7 +129,7 @@ Want to use SWR in your project? Here's where I have learned how to use it:
 - [SWR documentation](https://swr.vercel.app/docs/getting-started)
 - [Vercel SWR GitHub repository](https://github.com/vercel/swr)
 
-### Material-UI integration with Next.js
+<!-- ### Material-UI integration with Next.js -->
 
 After the initial setup to integrate Material-UI based on the repository provided I still had issues using the styled components from the library.
 
@@ -126,21 +147,23 @@ Have a similar issue in your setup? This is where I found answers:
 
 - [Box component odd behavior on Next.js](https://github.com/mui-org/material-ui/issues/19679)
 
-## Documentation used to create this project
+[## Documentation used](#documentation-used)
 
-- [SWR - React Hooks library for data fetching](https://swr.vercel.app/docs/with-nextjs)
+The following articles provided me with the information to make the best decision for the project:
 
-- [Contentful - Documentation: Content Delivery API](https://www.contentful.com/developers/docs/references/content-delivery-api/)
+- [SWR: React Hooks library for data fetching](https://swr.vercel.app/docs/with-nextjs)
+
+- [Contentful Documentation: Content Delivery API](https://www.contentful.com/developers/docs/references/content-delivery-api/)
 
 - [React Select Component Documentation](https://react-select.com/home)
 
-- [Material-UI - NextJs Example /Github Repository/](https://github.com/mui-org/material-ui/tree/next/examples/nextjs)
+- [Material-UI: NextJs Example /Github Repository/](https://github.com/mui-org/material-ui/tree/next/examples/nextjs)
 
 - [Vercel SWR GitHub repository](https://github.com/vercel/swr)
 
-- [Static file serving - Next.js documentation](https://nextjs.org/docs/basic-features/static-file-serving)
+- [Static file serving: Next.js documentation](https://nextjs.org/docs/basic-features/static-file-serving)
 
-## Articles used to create this project
+[## Articles used](#articles-used)
 
 Eventually, I have decided to use the Content Delivery API of Contantful to fetch and query data for the project, but for some time I was experimenting with the Contentful GraphQL Content API.
 
@@ -152,7 +175,7 @@ The following articles provided me with the information to make the best decisio
 
 - [Generate robots.txt and sitemap.xml in Next.js](https://imlc.me/generate-robots-txt-and-sitemap-xml-in-next-js)
 
-## Media Resources
+[## Media Resources](#media-resources)
 
 - [Pexels.com](https://www.pexels.com/)
 - [Pixabay.com](https://pixabay.com/)

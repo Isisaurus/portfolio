@@ -36,6 +36,7 @@ const useStyles = makeStyles(theme => ({
       textDecoration: 'none',
     },
   },
+  header2: { display: 'block', margin: '.5em 0' },
   link: {
     color: [theme.palette.text.secondary],
     fontWeight: 600,
@@ -44,7 +45,9 @@ const useStyles = makeStyles(theme => ({
       color: [theme.palette.primary.main],
     },
   },
-  list: {},
+  list: {
+    fontSize: '1rem',
+  },
   listItem: {
     lineHeight: 2,
   },
@@ -58,6 +61,32 @@ const useStyles = makeStyles(theme => ({
   divider: {
     margin: '2.5rem 0',
     width: '40%',
+  },
+  stackImgContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+    marginTop: '2rem',
+    '& > *': {
+      marginRight: '1rem',
+      marginBottom: '.5rem',
+    },
+    '&:last-child': {
+      marginRight: '0rem',
+    },
+  },
+  stackImg: {
+    maxHeight: '2rem',
+    transition: 'all 0.2s ease-out',
+    opacity: '.8',
+    [theme.breakpoints.down('xs')]: {
+      maxHeight: '1.5rem',
+    },
+    '&:hover': {
+      transition: 'all 0.2s ease-in',
+      transform: 'scale(1.2)',
+      opacity: '1',
+    },
   },
 }));
 
@@ -74,6 +103,15 @@ export default function ProjectDetails({ data }) {
           component: 'span',
           color: 'primary',
           className: `${classes.header}`,
+        },
+      },
+      h3: {
+        component: Typography,
+        props: {
+          variant: 'h6',
+          component: 'span',
+          color: 'primary',
+          className: `${classes.header2}`,
         },
       },
       p: {
@@ -96,10 +134,8 @@ export default function ProjectDetails({ data }) {
         },
       },
       li: {
-        component: Typography,
+        component: 'li',
         props: {
-          variant: 'body1',
-          component: 'li',
           className: `${classes.listItem}`,
         },
       },
@@ -119,6 +155,10 @@ export default function ProjectDetails({ data }) {
       },
     },
   };
+
+  const splitStr = stack.split(',');
+  const spread = [...splitStr];
+  const stackArr = Array.from(spread);
 
   return (
     <Layout>
@@ -159,8 +199,54 @@ export default function ProjectDetails({ data }) {
             </Button>
           </div>
           <GatsbyImage image={getImage(image)} alt={`${title} thumbnail`} />
+          <div className={classes.stackImgContainer}>
+            {stackArr.length
+              ? stackArr.map((el, i) => (
+                  <img
+                    key={i}
+                    alt={el.toLowerCase().replace('.', '_')}
+                    title={el}
+                    src={`/stack_images/${el
+                      .toLowerCase()
+                      .replace('.', '_')}.png`}
+                    className={classes.stackImg}
+                  />
+                ))
+              : ''}
+          </div>
         </div>
-        <ReactMarkdown id="recipe" options={options} children={html} />
+        <ReactMarkdown id="documentation" options={options} children={html} />
+        <div className={classes.buttonContainer}>
+          <Button
+            startIcon={<LanguageIcon />}
+            color="primary"
+            variant="text"
+            size="small"
+            style={{ marginRight: '.5rem' }}
+          >
+            <Link
+              to={`${live}`}
+              target="__blank"
+              style={{ textDecoration: 'none' }}
+            >
+              live server
+            </Link>
+          </Button>
+          <Button
+            startIcon={<CodeIcon />}
+            color="primary"
+            variant="text"
+            size="small"
+          >
+            <Link
+              to={`${github}`}
+              target="__blank"
+              style={{ textDecoration: 'none' }}
+            >
+              code
+            </Link>
+          </Button>
+        </div>
       </Container>
     </Layout>
   );

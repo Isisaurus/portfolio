@@ -103,7 +103,7 @@ function Sidebar() {
         <Divider orientation="vertical" className={classes.divider} />
       </Hidden>
       <Hidden smUp>
-        <Divider orientation="horizontal" fullWidth />
+        <Divider orientation="horizontal" />
       </Hidden>
     </section>
   );

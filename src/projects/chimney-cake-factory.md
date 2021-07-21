@@ -37,7 +37,7 @@ If you would like to go through the shopping process from start to finish do the
 
 5. Check the inbox of the email you filled in before to see your order confirmation and the reciet.
 
-[1]: If you don't feel comfortable sharing your email address, I recommend [this (https://temp-mail.org/en/)](https://temp-mail.org/en/) service to create a dummy email inbox for testing.
+[1] If you don't feel comfortable sharing your email address, I recommend [this (https://temp-mail.org/en/)](https://temp-mail.org/en/) service to create a dummy email inbox for testing.
 
 ---
 
