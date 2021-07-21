@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
   },
   link: {
     textDecoration: 'none',
-    padding: '.8em 0',
+    padding: '0 0 .5em',
     marginLeft: '3.5em',
     color: 'inherit',
     position: 'relative',
@@ -29,9 +29,9 @@ const useStyles = makeStyles(theme => ({
       bottom: '0',
       left: '0',
       display: 'block',
-      height: '5px',
+      height: '3px',
       width: '0',
-      backgroundColor: theme.palette.text.secondary,
+      backgroundColor: theme.palette.primary.light,
       transition: 'all 0.3s ease',
     },
     '&:hover': {
@@ -50,16 +50,16 @@ const useStyles = makeStyles(theme => ({
     },
   },
   active: {
-    color: theme.palette.primary.main,
+    color: theme.palette.text.secondary,
     '&::after': {
       content: '" "',
       position: 'absolute',
       bottom: '0',
       left: '0',
       display: 'block',
-      height: '5px',
+      height: '3px',
       width: '50%',
-      backgroundColor: theme.palette.text.secondary,
+      backgroundColor: theme.palette.primary.light,
       transition: 'all 0.3s ease',
     },
     '&:hover': {
@@ -70,6 +70,10 @@ const useStyles = makeStyles(theme => ({
       },
       transition: 'all 0.3s ease',
     },
+  },
+  navItem: {
+    fontSize: '1rem',
+    fontWeight: 600,
   },
 }));
 
@@ -85,7 +89,12 @@ const Navbar = () => {
       <Logo />
       <Toolbar className={classes.Toolbar}>
         <Link to="/" className={classes.link} activeClassName={classes.active}>
-          <Typography variant="h6" component="span">
+          <Typography
+            variant="h6"
+            component="span"
+            className={classes.navItem}
+            color="textPrimary"
+          >
             Projects
           </Typography>
         </Link>
@@ -95,7 +104,12 @@ const Navbar = () => {
           className={classes.link}
           activeClassName={classes.active}
         >
-          <Typography variant="h6" component="span">
+          <Typography
+            variant="h6"
+            component="span"
+            className={classes.navItem}
+            color="textPrimary"
+          >
             About
           </Typography>
         </Link>
@@ -105,7 +119,12 @@ const Navbar = () => {
           className={classes.link}
           activeClassName={classes.active}
         >
-          <Typography variant="h6" component="span">
+          <Typography
+            variant="h6"
+            component="span"
+            className={classes.navItem}
+            color="textPrimary"
+          >
             Contact
           </Typography>
         </Link>
