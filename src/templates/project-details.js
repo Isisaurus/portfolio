@@ -24,6 +24,8 @@ const useStyles = makeStyles(theme => ({
     },
   },
   header: {
+    display: 'block',
+    margin: '1em 0',
     '&:hover': {
       textDecoration: 'none',
     },
