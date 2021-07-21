@@ -22,8 +22,15 @@ export default function ProjectDetails({ data }) {
       h2: {
         component: Typography,
         props: {
-          variant: 'h1',
+          variant: 'h6',
           color: 'primary',
+        },
+      },
+      p: {
+        component: Typography,
+        props: {
+          variant: 'body1',
+          color: 'textPrimary',
         },
       },
     },
@@ -38,13 +45,8 @@ export default function ProjectDetails({ data }) {
           <h3>
             {styledDate.toLocaleDateString('nl-Nl', { dateStyle: 'medium' })}
           </h3>
-          <div>Image</div>
         </div>
-        <ReactMarkdown
-          id="recipe"
-          options={options}
-          children={html}
-        ></ReactMarkdown>
+        <ReactMarkdown id="recipe" options={options} children={html} />
         {/* <div dangerouslySetInnerHTML={{ __html: html }} /> */}
       </Container>
     </Layout>
