@@ -2,7 +2,8 @@ import React from 'react';
 import Layout from '../components/Layout';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { Container, makeStyles } from '@material-ui/core';
+import ReactMarkdown from 'markdown-to-jsx';
+import { Container, makeStyles, Typography } from '@material-ui/core';
 
 export default function ProjectDetails({ data }) {
   const { html } = data.markdownRemark;
@@ -16,6 +17,18 @@ export default function ProjectDetails({ data }) {
   } = data.markdownRemark.frontmatter;
   const styledDate = new Date(date);
 
+  const options = {
+    overrides: {
+      h2: {
+        component: Typography,
+        props: {
+          variant: 'h1',
+          color: 'primary',
+        },
+      },
+    },
+  };
+
   return (
     <Layout>
       <Container>
@@ -27,7 +40,12 @@ export default function ProjectDetails({ data }) {
           </h3>
           <div>Image</div>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <ReactMarkdown
+          id="recipe"
+          options={options}
+          children={html}
+        ></ReactMarkdown>
+        {/* <div dangerouslySetInnerHTML={{ __html: html }} /> */}
       </Container>
     </Layout>
   );
