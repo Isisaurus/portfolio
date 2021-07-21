@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { Container, makeStyles } from '@material-ui/core';
 
 export default function ProjectDetails({ data }) {
   const { html } = data.markdownRemark;
@@ -17,15 +18,17 @@ export default function ProjectDetails({ data }) {
 
   return (
     <Layout>
-      <div>
-        <GatsbyImage image={getImage(image)} alt={`${title} thumbnail`} />
-        <h2>{title}</h2>
-        <h3>
-          {styledDate.toLocaleDateString('nl-Nl', { dateStyle: 'medium' })}
-        </h3>
-        <div>Image</div>
-      </div>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <Container>
+        <div>
+          <GatsbyImage image={getImage(image)} alt={`${title} thumbnail`} />
+          <h2>{title}</h2>
+          <h3>
+            {styledDate.toLocaleDateString('nl-Nl', { dateStyle: 'medium' })}
+          </h3>
+          <div>Image</div>
+        </div>
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+      </Container>
     </Layout>
   );
 }

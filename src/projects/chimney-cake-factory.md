@@ -9,6 +9,11 @@ date: 2021-01-01T00:00:00+00:00
 description: A Single Page Application (SPA) built using `create-react-app` that works together with the Commerce.js API on the client side to create a start-to-finish webshop experience by making API calls to the headless backend service.
 ---
 
+## Table of contents
+
+1. [Test purchase](#completing-a-test-purchase)
+2. [Achievements](#achievements)
+
 ## Completing a test purchase
 
 If you would like to go through the shopping process from start to finish do the following:
