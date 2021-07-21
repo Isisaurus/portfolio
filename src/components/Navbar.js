@@ -12,6 +12,10 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'row',
     alignItems: 'center',
     padding: '0 1.5rem',
+
+    [theme.breakpoints.down('xs')]: {
+      padding: '0 .5rem',
+    },
   },
   Toolbar: {
     marginLeft: 'auto',
