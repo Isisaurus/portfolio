@@ -9,6 +9,7 @@ import {
   Typography,
   Divider,
   Button,
+  Fab,
 } from '@material-ui/core';
 import { Link } from 'gatsby-theme-material-ui';
 import LanguageIcon from '@material-ui/icons/Language';
@@ -31,12 +32,17 @@ const useStyles = makeStyles(theme => ({
   },
   header: {
     display: 'block',
-    margin: '1em 0',
+    margin: '2.5em 0 1em',
     '&:hover': {
       textDecoration: 'none',
     },
   },
-  header2: { display: 'block', margin: '.5em 0' },
+  header2: {
+    display: 'block',
+    margin: '1.5em 0',
+    fontSize: '1rem',
+    fontWeight: 500,
+  },
   link: {
     color: [theme.palette.text.secondary],
     fontWeight: 600,
@@ -108,7 +114,7 @@ export default function ProjectDetails({ data }) {
       h3: {
         component: Typography,
         props: {
-          variant: 'h6',
+          variant: 'h5',
           component: 'span',
           color: 'primary',
           className: `${classes.header2}`,
@@ -216,7 +222,7 @@ export default function ProjectDetails({ data }) {
           </div>
         </div>
         <ReactMarkdown id="documentation" options={options} children={html} />
-        <div className={classes.buttonContainer}>
+        <div className={classes.buttonContainer} style={{ margin: '2rem 0' }}>
           <Button
             startIcon={<LanguageIcon />}
             color="primary"

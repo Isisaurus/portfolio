@@ -25,13 +25,13 @@ description: A recruitment agency website to list, serach and filter the current
 
 ---
 
-<!-- [## The goal of the project](#the-goal-of-the-project) -->
+[## The goal of the project](#the-goal-of-the-project)
 
 Create a recruitment agency website to list, serach and filter the currently available vacancies, showcase detailed information about the positions and give the users the option to send a complete job application through the platform.
 
 My goal with this project was to work closely with data in a React application, learn about implementing filters and pagination using different libraries and connect multiple platforms to create a smooth browsing experience for the visitors of the site surrounded by a simple, but modern minimalist UI design.
 
-<!-- [## Achievements](#achievements) -->
+[## Achievements](#achievements)
 
 The website allows you to:
 
@@ -49,7 +49,7 @@ The website allows you to:
 - contact the agency using a contact form
 - get a custom 404 and error page with meaningful information about the problem occured and redirect to hom page after 4 seconds
 
-<!-- [## Technologies used](#technologies-used) -->
+[## Technologies used](#technologies-used)
 
 - The website is a Next.js project created by [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -58,7 +58,7 @@ The website allows you to:
 - The filtering and pagination are implemented using the [Vercel SWR React Hooks Library](https://swr.vercel.app/).
 - The website is delpoyed using [Vercel](https://vercel.com/). You can access the website via [https://tech-recruitment.vercel.app/](https://tech-recruitment.vercel.app/).
 
-<!-- [## User stories](#user-stories) -->
+[## User stories](#user-stories)
 
 The app's functionality from the user's perspective:
 
@@ -71,9 +71,9 @@ The app's functionality from the user's perspective:
 - As a user, I want to be able to contact the company through the website, so that I can ask questions.
 - As a user, I want to receive feedback after submitting a form so that I know my information was successfully sent.
 
-<!-- [## Features of the Website](#features-of-the-website) -->
+[## Features of the Website](#features-of-the-website)
 
-(from user stories)
+Features from user stories:
 
 - Landing page displaying: the goal of the company, the recruitment team, the partner firms, types of jobs and services provided.
 - Sign up form to gather contact information, upload CV, pick from job preferences.
@@ -86,7 +86,7 @@ The app's functionality from the user's perspective:
 - Subscription form to get on the mailing list.
 - Confirmation message displayed in the UI after submitting application, contact or subsription forms.
 
-<!-- [## Future of the project](#future-of-the-project) -->
+[## Future of the project](#future-of-the-project)
 
 Future improvements:
 
@@ -106,13 +106,13 @@ The following features implemented would improve the usability and user experien
 - Back-end middleware function responsible for email sending using nodemailer.
 - Implementation of automated response emails.
 
-<!-- [## Inspiration](#inspiration) -->
+[## Inspiration](#inspiration)
 
 The design of the project was inspired by the website of [Codecareer IT recruitment agency](https://codecareer.nl/).
 
-<!-- [## Solutions and considerations](#solutions-and-considerations) -->
+[## Solutions and considerations](#solutions-and-considerations)
 
-<!-- ### SWR - filtering and pagination on the client side from Cache -->
+### SWR: filtering and pagination on the client side from Cache
 
 SWR (stale-while-revalidate) is an HTTP Cache revalidation strategy to fetch, revalidate and manage data on the client side instead of the usual combination of React hooks, useState and useEffect.
 
@@ -129,7 +129,7 @@ Want to use SWR in your project? Here's where I have learned how to use it:
 - [SWR documentation](https://swr.vercel.app/docs/getting-started)
 - [Vercel SWR GitHub repository](https://github.com/vercel/swr)
 
-<!-- ### Material-UI integration with Next.js -->
+### Material-UI integration with Next.js
 
 After the initial setup to integrate Material-UI based on the repository provided I still had issues using the styled components from the library.
 
