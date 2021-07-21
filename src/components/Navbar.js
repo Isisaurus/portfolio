@@ -11,18 +11,31 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    padding: '.5rem 2rem',
+    padding: '0 1.5rem',
   },
   Toolbar: {
     marginLeft: 'auto',
     padding: '0',
+
+    [theme.breakpoints.down('xs')]: {
+      flex: '1',
+      justifyContent: 'space-around',
+    },
   },
   link: {
     textDecoration: 'none',
-    padding: '0 0 .5em',
+    paddingBottom: '0.5em',
     marginLeft: '3.5em',
     color: 'inherit',
     position: 'relative',
+
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: '1.5em',
+    },
+    [theme.breakpoints.down('xs')]: {
+      marginLeft: '0',
+    },
+
     '&::after': {
       content: '" "',
       position: 'absolute',
@@ -74,6 +87,10 @@ const useStyles = makeStyles(theme => ({
   navItem: {
     fontSize: '1rem',
     fontWeight: 600,
+
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '.8rem',
+    },
   },
 }));
 

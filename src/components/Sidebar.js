@@ -6,6 +6,7 @@ import {
   Divider,
   SvgIcon,
   Typography,
+  Hidden,
 } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import { Link } from 'gatsby-theme-material-ui';
@@ -15,6 +16,10 @@ const useStyles = makeStyles(theme => ({
     marginRight: '1rem',
     padding: '10px .5rem 0',
     position: 'relative',
+    [theme.breakpoints.down('xs')]: {
+      marginRight: '0',
+      padding: '0',
+    },
   },
   iconbtn: {
     '&:hover': {
@@ -39,19 +44,24 @@ const useStyles = makeStyles(theme => ({
       textDecoration: 'none',
     },
   },
+  list: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      padding: '0',
+    },
+  },
 }));
 
 function Sidebar() {
   const classes = useStyles();
   return (
     <section className={classes.sidebar}>
-      <List
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
+      <List className={classes.list}>
         <Link
           to="https://github.com/Isisaurus"
           target="__blank"
@@ -89,7 +99,12 @@ function Sidebar() {
           </IconButton>
         </Link>
       </List>
-      <Divider orientation="vertical" className={classes.divider} />
+      <Hidden xsDown>
+        <Divider orientation="vertical" className={classes.divider} />
+      </Hidden>
+      <Hidden smUp>
+        <Divider orientation="horizontal" fullWidth />
+      </Hidden>
     </section>
   );
 }
