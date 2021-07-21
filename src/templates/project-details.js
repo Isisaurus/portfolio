@@ -3,9 +3,58 @@ import Layout from '../components/Layout';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import ReactMarkdown from 'markdown-to-jsx';
-import { Container, makeStyles, Typography } from '@material-ui/core';
+import {
+  Container,
+  makeStyles,
+  Typography,
+  Link,
+  Divider,
+} from '@material-ui/core';
+
+const useStyles = makeStyles(theme => ({
+  intro: {
+    margin: '4rem 0',
+  },
+  title: {
+    fontSize: '2.5rem',
+    lineHeight: '1.5',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1.5rem',
+      color: theme.palette.primary.main,
+    },
+  },
+  header: {
+    '&:hover': {
+      textDecoration: 'none',
+    },
+  },
+  link: {
+    color: [theme.palette.text.secondary],
+    fontWeight: 600,
+    '&:hover': {
+      textDecoration: 'none',
+      color: [theme.palette.primary.main],
+    },
+  },
+  list: {},
+  listItem: {
+    lineHeight: 2,
+  },
+  code: {
+    fontSize: '1rem',
+    textTransform: 'none',
+    backgroundColor: 'rgba(0,0,0, 0.05)',
+    padding: '.3em .5em',
+    fontWeight: 300,
+  },
+  divider: {
+    margin: '4rem 0',
+    width: '40%',
+  },
+}));
 
 export default function ProjectDetails({ data }) {
+  const classes = useStyles();
   const { html } = data.markdownRemark;
   const {
     title,
@@ -23,14 +72,50 @@ export default function ProjectDetails({ data }) {
         component: Typography,
         props: {
           variant: 'h6',
+          component: 'span',
           color: 'primary',
+          className: `${classes.header}`,
         },
       },
       p: {
         component: Typography,
         props: {
+          paragraph: true,
           variant: 'body1',
-          color: 'textPrimary',
+        },
+      },
+      a: {
+        component: Link,
+        props: {
+          className: `${classes.link}`,
+        },
+      },
+      ul: {
+        component: 'ul',
+        props: {
+          className: `${classes.list}`,
+        },
+      },
+      li: {
+        component: Typography,
+        props: {
+          variant: 'body1',
+          component: 'li',
+          className: `${classes.listItem}`,
+        },
+      },
+      code: {
+        component: Typography,
+        props: {
+          variant: 'overline',
+          component: 'code',
+          className: `${classes.code}`,
+        },
+      },
+      hr: {
+        component: Divider,
+        props: {
+          className: `${classes.divider}`,
         },
       },
     },
@@ -39,12 +124,17 @@ export default function ProjectDetails({ data }) {
   return (
     <Layout>
       <Container>
-        <div>
-          <GatsbyImage image={getImage(image)} alt={`${title} thumbnail`} />
-          <h2>{title}</h2>
-          <h3>
+        <div className={classes.intro}>
+          <Typography variant="h1" component="h2" className={classes.title}>
+            {title}
+          </Typography>
+          <Typography
+            variant="overline"
+            style={{ fontSize: '1rem', textTransform: 'none' }}
+          >
             {styledDate.toLocaleDateString('nl-Nl', { dateStyle: 'medium' })}
-          </h3>
+          </Typography>
+          <GatsbyImage image={getImage(image)} alt={`${title} thumbnail`} />
         </div>
         <ReactMarkdown id="recipe" options={options} children={html} />
         {/* <div dangerouslySetInnerHTML={{ __html: html }} /> */}
