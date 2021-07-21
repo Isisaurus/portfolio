@@ -132,7 +132,12 @@ export default function ProjectDetails({ data }) {
     });
   };
 
-  window.addEventListener('scroll', toggleVisible);
+  const isBrowser = typeof window !== 'undefined';
+  if (!isBrowser) {
+    return;
+  } else {
+    window.addEventListener('scroll', toggleVisible);
+  }
 
   const { html } = data.markdownRemark;
   const { title, stack, live, github, image } = data.markdownRemark.frontmatter;
