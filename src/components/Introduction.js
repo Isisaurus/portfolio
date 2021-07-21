@@ -60,7 +60,7 @@ function Introduction() {
           color="textSecondary"
           className={classes.introParagraph}
         >
-          Hello, my name is Diana Vitanyi. <br />I am a{' '}
+          Hello, my name is Diána Vitányi. <br />I am a{' '}
           <span>Web Developer & Designer</span>.
         </Typography>
         <div>

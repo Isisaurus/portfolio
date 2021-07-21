@@ -13,13 +13,16 @@ export default function ProjectDetails({ data }) {
     github,
     image,
   } = data.markdownRemark.frontmatter;
+  const styledDate = new Date(date);
 
   return (
     <Layout>
       <div>
         <GatsbyImage image={getImage(image)} alt={`${title} thumbnail`} />
         <h2>{title}</h2>
-        <h3>{date.toLocaleString('nl-Nl', { dateStyle: 'short' })}</h3>
+        <h3>
+          {styledDate.toLocaleDateString('nl-Nl', { dateStyle: 'medium' })}
+        </h3>
         <div>Image</div>
       </div>
       <div dangerouslySetInnerHTML={{ __html: html }} />
