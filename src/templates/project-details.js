@@ -95,6 +95,9 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('xs')]: {
       maxHeight: '1.5rem',
     },
+    [theme.breakpoints.up('md')]: {
+      maxHeight: '2.5rem',
+    },
     '&:hover': {
       transition: 'all 0.2s ease-in',
       transform: 'scale(1.2)',

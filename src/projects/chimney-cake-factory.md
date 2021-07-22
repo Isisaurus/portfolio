@@ -43,7 +43,7 @@ If you would like to go through the shopping process from start to finish do the
 
 [## Goal of the project](#goal-of-the-project)
 
-Create an E-Commerce shopping experience for a bakery called Chimneycake Factory using React.js, Commerce.js and Stripe.js.
+Create an E-Commerce shopping experience for a bakery called Chimney Cake Factory using React.js, Commerce.js and Stripe.js.
 
 This website is a Single Page Application (SPA) built using `create-react-app` that works together with the Commerce.js API on the client side to create a start-to-finish webshop experience by making API calls to the headless backend service.
 
