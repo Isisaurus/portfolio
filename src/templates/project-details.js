@@ -19,6 +19,9 @@ import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 const useStyles = makeStyles(theme => ({
   intro: {
     margin: '4rem 0',
+    [theme.breakpoints.down('xs')]: {
+      margin: '1.5rem 0 2rem',
+    },
   },
   buttonContainer: {
     margin: '1rem 0 2rem',

@@ -35,8 +35,8 @@ document.addEventListener('click', function (e) {
   if (e.target) {
     const href = e.target.getAttribute('href');
     if (href) {
-      const ifId = href.startsWith('#');
-      if (!ifId) {
+      const ifNotOnPAge = href.startsWith('http');
+      if (ifNotOnPAge) {
         e.target.setAttribute('target', '__blank');
       }
     }

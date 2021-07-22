@@ -67,10 +67,6 @@ const useStyles = makeStyles(theme => ({
     marginTop: '1rem',
     '& > *': {
       marginRight: '1rem',
-      marginBottom: '.5rem',
-    },
-    '&:last-child': {
-      marginRight: '0rem',
     },
   },
   stackImg: {
