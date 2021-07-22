@@ -30,6 +30,19 @@ class ScrollToTopBtn {
   }
 }
 
+// target="__blank" added to links with href outside of page
+document.addEventListener('click', function (e) {
+  if (e.target) {
+    const href = e.target.getAttribute('href');
+    if (href) {
+      const ifId = href.startsWith('#');
+      if (!ifId) {
+        e.target.setAttribute('target', '__blank');
+      }
+    }
+  }
+});
+
 exports.onRouteUpdate = () => {
   if (document.getElementById('scroll-btn')) {
     let scrollToTopEl = new ScrollToTopBtn();
