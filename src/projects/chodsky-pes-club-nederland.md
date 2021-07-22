@@ -1,6 +1,6 @@
 ---
 title: CPCN.nl & API
-stack: MongoDB,Mongoose,PUG,Node.js,Express.js,SASS
+stack: MongoDB,Mongoose,PUG,Node.js,Express.js,SASS,JWT
 slug: chodsky-pes-club-nederland
 live: https://cpcn.herokuapp.com/
 github: https://github.com/Isisaurus/tech-recruitment-website
