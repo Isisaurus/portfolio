@@ -12,11 +12,18 @@
 
 # Gatsby and the Window object
 
-By running the `gatsby develop` command Gatsby runs in the browser. But when building the application with `gatsby build` it happens server-side, so the window object doesn't exist. This causes the build process to fail.
+Using the `gatsby develop` command Gatsby runs in the browser. But when building the application with `gatsby build` it happens server-side, so the window object doesn't exist. This causes the build process to fail.
 
-I used a simple if check to determine if the window is defined and add the scroll event listener function.
+The `gatsby-browser.js` file "...gives you control over Gatsby’s behavior in the browser. For example, responding to a user changing routes, or calling a function when the user first opens any page."[^1]
 
-The following article helped me overcome this issue and learn more about it: [Gatsby-the window is not defined error, what and how to fix it?](https://blog.greenroots.info/gatsby-the-window-is-not-defined-error-what-and-how-to-fix-it)
+To overcome this issue:
 
-https://pakjiddat.netlify.app/posts/adding-scroll-to-top-button-to-gatsby-website
-https://juliapottinger.com/react-gatsby-scroll-to-top/
+1. I added a `gatsby-brower.js` file to the root folder.
+2. Created the `class ScrollToTopBtn` which when initialized adds event listeners to the window object (which now will always exist) and the button added to the `project-details.js` template with the id of `scroll-btn`.
+3. If the HTML element with the id given is present on the page, the class is initialized and the event listeners are added. All done by the exported `onRouteUpdate()` which runs when the user initially loads the page or changes routes.
+
+The following articles and documentation helped me overcome this issue:
+
+- [Scroll to top button in Gatsby](https://pakjiddat.netlify.app/posts/adding-scroll-to-top-button-to-gatsby-website)
+- [Gatsby Documentation: onRouteUpdate function](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/)
+- [^1]: [Gatsby Documentation: API Files](https://www.gatsbyjs.com/docs/api-files/#gatsby-skip-here)

@@ -103,6 +103,7 @@ const useStyles = makeStyles(theme => ({
     bottom: '20px',
   },
   toTopBtn: {
+    display: 'none',
     opacity: '.6',
     marginRight: '20px',
     '&:hover': {
@@ -113,36 +114,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function ProjectDetails({ data }) {
   const classes = useStyles();
-
-  // // scroll-to-top behaviour
-  // const [visible, setVisible] = useState(false);
-  // // check if browser
-  // const isBrowser = typeof window !== 'undefined';
-  // const toggleVisible = () => {
-  //   if (isBrowser) {
-  //     const scrolled = document.documentElement.scrollTop;
-  //     if (scrolled > 300) {
-  //       setVisible(true);
-  //     } else if (scrolled <= 300) {
-  //       setVisible(false);
-  //     }
-  //   }
-  // };
-  // // event listener to window
-  // if (isBrowser) {
-  //   window.addEventListener('scroll', toggleVisible);
-  // } else {
-  //   setVisible(false);
-  // }
-  // // click event callback
-  // const scrollToTop = () => {
-  //   if (isBrowser) {
-  //     window.scrollTo({
-  //       top: 0,
-  //       behavior: 'smooth',
-  //     });
-  //   }
-  // };
 
   // desctructure markdown
   const { html } = data.markdownRemark;
@@ -307,8 +278,6 @@ export default function ProjectDetails({ data }) {
           color="primary"
           aria-label="up"
           className={classes.toTopBtn}
-          // style={{ display: visible ? 'inline-block' : 'none' }}
-          // onClick={scrollToTop}
           id="scroll-btn"
           title="Scroll to top"
         >

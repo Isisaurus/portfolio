@@ -1,20 +1,22 @@
 // scroll-to-top feature client side
-class SideBarBtns {
+class ScrollToTopBtn {
   Initialize() {
-    window.addEventListener('scroll', this.ToggleButtons);
+    window.addEventListener('scroll', this.ToggleButton);
     document
       .getElementById('scroll-btn')
       .addEventListener('click', this.ScrollToTop);
   }
-  ToggleButtons() {
-    if (
-      document.body.scrollTop > 300 ||
-      document.documentElement.scrollTop > 300
-    ) {
-      document.getElementById('scroll-btn').style.display = 'inline-block';
-    } else {
-      /** The scroll to top button is hidden */
-      document.getElementById('scroll-btn').style.display = 'none';
+  ToggleButton() {
+    if (document.getElementById('scroll-btn')) {
+      if (
+        document.body.scrollTop > 300 ||
+        document.documentElement.scrollTop > 300
+      ) {
+        document.getElementById('scroll-btn').style.display = 'inline-block';
+      } else {
+        /** The scroll to top button is hidden */
+        document.getElementById('scroll-btn').style.display = 'none';
+      }
     }
   }
   /** When the user clicks on the button, scroll to the top of the document */
@@ -29,8 +31,8 @@ class SideBarBtns {
 }
 
 exports.onRouteUpdate = () => {
-  let sidebarbtns = new SideBarBtns();
   if (document.getElementById('scroll-btn')) {
-    sidebarbtns.Initialize();
+    let scrollToTopEl = new ScrollToTopBtn();
+    scrollToTopEl.Initialize();
   }
 };
