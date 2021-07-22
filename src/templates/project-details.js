@@ -114,31 +114,37 @@ const useStyles = makeStyles(theme => ({
 export default function ProjectDetails({ data }) {
   const classes = useStyles();
 
+  // scroll-to-top behaviour
   const [visible, setVisible] = useState(false);
-
+  // check if browser
+  const isBrowser = typeof window !== 'undefined';
   const toggleVisible = () => {
-    const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 300) {
-      setVisible(true);
-    } else if (scrolled <= 300) {
-      setVisible(false);
+    if (isBrowser) {
+      const scrolled = document.documentElement.scrollTop;
+      if (scrolled > 300) {
+        setVisible(true);
+      } else if (scrolled <= 300) {
+        setVisible(false);
+      }
+    }
+  };
+  // event listener to window
+  if (isBrowser) {
+    window.addEventListener('scroll', toggleVisible);
+  } else {
+    setVisible(false);
+  }
+  // click event callback
+  const scrollToTop = () => {
+    if (isBrowser) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
     }
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
-
-  const isBrowser = typeof window !== 'undefined';
-  if (!isBrowser) {
-    return;
-  } else {
-    window.addEventListener('scroll', toggleVisible);
-  }
-
+  // desctructure markdown
   const { html } = data.markdownRemark;
   const { title, stack, live, github, image } = data.markdownRemark.frontmatter;
   const options = {
@@ -203,6 +209,7 @@ export default function ProjectDetails({ data }) {
     },
   };
 
+  // generate stack array for logos
   const splitStr = stack.split(',');
   const spread = [...splitStr];
   const stackArr = Array.from(spread);

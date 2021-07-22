@@ -17,3 +17,6 @@ By running the `gatsby develop` command Gatsby runs in the browser. But when bui
 I used a simple if check to determine if the window is defined and add the scroll event listener function.
 
 The following article helped me overcome this issue and learn more about it: [Gatsby-the window is not defined error, what and how to fix it?](https://blog.greenroots.info/gatsby-the-window-is-not-defined-error-what-and-how-to-fix-it)
+
+https://pakjiddat.netlify.app/posts/adding-scroll-to-top-button-to-gatsby-website
+https://juliapottinger.com/react-gatsby-scroll-to-top/
