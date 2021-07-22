@@ -31,6 +31,8 @@ Create a recruitment agency website to list, serach and filter the currently ava
 
 My goal with this project was to work closely with data in a React application, learn about implementing filters and pagination using different libraries and connect multiple platforms to create a smooth browsing experience for the visitors of the site surrounded by a simple, but modern minimalist UI design.
 
+---
+
 [## Achievements](#achievements)
 
 The website allows you to:
@@ -49,6 +51,8 @@ The website allows you to:
 - contact the agency using a contact form
 - get a custom 404 and error page with meaningful information about the problem occured and redirect to hom page after 4 seconds
 
+---
+
 [## Technologies used](#technologies-used)
 
 - The website is a Next.js project created by [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
@@ -57,6 +61,8 @@ The website allows you to:
 - The vacancy data displayed is fetched from a [Contentful](https://www.contentful.com/) collection using the [Contentful Content Delivery API](https://www.contentful.com/developers/docs/references/content-delivery-api/).
 - The filtering and pagination are implemented using the [Vercel SWR React Hooks Library](https://swr.vercel.app/).
 - The website is delpoyed using [Vercel](https://vercel.com/). You can access the website via [https://tech-recruitment.vercel.app/](https://tech-recruitment.vercel.app/).
+
+---
 
 [## User stories](#user-stories)
 
@@ -70,6 +76,8 @@ The app's functionality from the user's perspective:
 - As a user, I want to be able to filter jobs so that I can find exactly what I am looking for.
 - As a user, I want to be able to contact the company through the website, so that I can ask questions.
 - As a user, I want to receive feedback after submitting a form so that I know my information was successfully sent.
+
+---
 
 [## Features of the Website](#features-of-the-website)
 
@@ -85,6 +93,8 @@ Features from user stories:
 - Contact form with name, email and message fields.
 - Subscription form to get on the mailing list.
 - Confirmation message displayed in the UI after submitting application, contact or subsription forms.
+
+---
 
 [## Future of the project](#future-of-the-project)
 
@@ -106,9 +116,13 @@ The following features implemented would improve the usability and user experien
 - Back-end middleware function responsible for email sending using nodemailer.
 - Implementation of automated response emails.
 
+---
+
 [## Inspiration](#inspiration)
 
 The design of the project was inspired by the website of [Codecareer IT recruitment agency](https://codecareer.nl/).
+
+---
 
 [## Solutions and considerations](#solutions-and-considerations)
 
@@ -116,11 +130,11 @@ The design of the project was inspired by the website of [Codecareer IT recruitm
 
 SWR (stale-while-revalidate) is an HTTP Cache revalidation strategy to fetch, revalidate and manage data on the client side instead of the usual combination of React hooks, useState and useEffect.
 
-Initial data is coming from getStaticProps method, which fetches the data for the statically generated site (/vacatures) at generation time.
+Initial data is coming from `getStaticProps( )` method, which fetches the data for the statically generated site (/vacatures) at generation time.
 
-In my project SWR works together with getStaticProps through the useSWR hook to manage the data displayed on the site. The initial data is provided by getStaticProps. The fetcher function is located in utils/contentful.js in the ContentFulApi class. The getValues() asynchronos method fetches the possible filter field values, the callContentful() asynchronos method gets the "jobs" collection data entries from the Contentful Content Delivery API.
+In my project SWR works together with `getStaticProps( )` through the useSWR hook to manage the data displayed on the site. The initial data is provided by `getStaticProps( )`. The fetcher function is located in utils/contentful.js in the ContentFulApi class. The getValues() asynchronos method fetches the possible filter field values, the `callContentful( )` asynchronos method gets the "jobs" collection data entries from the Contentful Content Delivery API.
 
-The callContentful() method takes in two arguments which is passed into the fetcher function through the SWR key: query and page. The query is an object with keys from the possible fields for filtering in the application, the values are coming from a form filled in by the user.
+The `callContentful( )` method takes in two arguments which is passed into the fetcher function through the SWR key: query and page. The query is an object with keys from the possible fields for filtering in the application, the values are coming from a form filled in by the user.
 
 As soon as the query object is updated in the component's state, the fetcher function executes and retrieves the matching results from the initial data with a 6 results/page pagination.
 
@@ -128,6 +142,8 @@ Want to use SWR in your project? Here's where I have learned how to use it:
 
 - [SWR documentation](https://swr.vercel.app/docs/getting-started)
 - [Vercel SWR GitHub repository](https://github.com/vercel/swr)
+
+---
 
 ### Material-UI integration with Next.js
 
@@ -163,6 +179,8 @@ The following articles provided me with the information to make the best decisio
 
 - [Static file serving: Next.js documentation](https://nextjs.org/docs/basic-features/static-file-serving)
 
+---
+
 [## Articles used](#articles-used)
 
 Eventually, I have decided to use the Content Delivery API of Contantful to fetch and query data for the project, but for some time I was experimenting with the Contentful GraphQL Content API.
@@ -174,6 +192,8 @@ The following articles provided me with the information to make the best decisio
 - [Next.js, Contentful CMS, GraphQL, oh my!](https://bholmes.dev/blog/nextjs-contentful-cms-graphql-oh-my/)
 
 - [Generate robots.txt and sitemap.xml in Next.js](https://imlc.me/generate-robots-txt-and-sitemap-xml-in-next-js)
+
+---
 
 [## Media Resources](#media-resources)
 
