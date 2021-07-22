@@ -8,13 +8,34 @@
 
 ## Issues and Solutions during development
 
-# Set HTML id for markdown headings for page navigation
+### Set HTML id for markdown headings for page navigation
 
-# Gatsby and the Window object
+In this project I have used markdown files as my content source (src/projects). Each `.md` file contains information about a portfolio project with the same structure:
+
+- metadata about the project in the frontmatter,
+- Table of Contents with the list of topics found in the documentation and the links to them on the page using ids,
+- documentation text each topic starting with an `<hr/>` tag and a header.
+
+To give the Gatsby GraphQl layer access to the files in the filesystem I have used a source plugin, `gatsby-source-filesystem` and configured it in `gatsby-config.js`.
+
+Using GraphQl queries I dynamically added this data to the `index.js` page and queried based on a unique slug for the project details page.
+
+To add a Table of Contents linked to the topics I needed a dynamic id for each header generated automatically based on the text of the heading. Using the syntax provided by the official [Markdown documentation](https://www.markdownguide.org/extended-syntax/#heading-ids) Gatsby failed to add the ids to the headers.
+
+To overcome this issue I replaced each heading with a link and placed the header element inside. The `<a/>` rendered from the markdown files with this change had the ids needed.
+
+When configuring the `jsx` generated from the markdown using the `markdown-to-jsx` npm package I could no longer add the `target="__blank"` prop to all the `<a/>` on the project details page, else the Table of Contents links would also open new pages.
+
+To overcome this issue I used the following resources:
+
+- [Discussion: Anchors in Markdown](https://talk.commonmark.org/t/anchors-in-markdown/247)
+- [Markdown.org Documentation](https://www.markdownguide.org/extended-syntax/#heading-ids)
+
+### Gatsby and the Window object
 
 Using the `gatsby develop` command Gatsby runs in the browser. But when building the application with `gatsby build` it happens server-side, so the window object doesn't exist. This causes the build process to fail.
 
-The `gatsby-browser.js` file "...gives you control over Gatsby’s behavior in the browser. For example, responding to a user changing routes, or calling a function when the user first opens any page."[^1]
+The `gatsby-browser.js` file "...gives you control over Gatsby’s behavior in the browser. For example, responding to a user changing routes, or calling a function when the user first opens any page."[1]
 
 To overcome this issue:
 
@@ -26,4 +47,4 @@ The following articles and documentation helped me overcome this issue:
 
 - [Scroll to top button in Gatsby](https://pakjiddat.netlify.app/posts/adding-scroll-to-top-button-to-gatsby-website)
 - [Gatsby Documentation: onRouteUpdate function](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/)
-- [^1]: [Gatsby Documentation: API Files](https://www.gatsbyjs.com/docs/api-files/#gatsby-skip-here)
+- [1]: [Gatsby Documentation: API Files](https://www.gatsbyjs.com/docs/api-files/#gatsby-skip-here)

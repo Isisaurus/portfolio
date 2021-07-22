@@ -43,6 +43,9 @@ const useStyles = makeStyles(theme => ({
     margin: '1.5em 0',
     fontSize: '1rem',
     fontWeight: 500,
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.2rem',
+    },
   },
   link: {
     color: [theme.palette.text.secondary],
@@ -57,13 +60,16 @@ const useStyles = makeStyles(theme => ({
   },
   listItem: {
     lineHeight: 2,
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.2rem',
+    },
   },
   code: {
     fontSize: '1rem',
     textTransform: 'none',
     backgroundColor: 'rgba(0,0,0, 0.05)',
     padding: '.3em .5em',
-    fontWeight: 300,
+    fontWeight: 400,
   },
   divider: {
     margin: '2.5rem 0',
@@ -110,6 +116,11 @@ const useStyles = makeStyles(theme => ({
       opacity: 1,
     },
   },
+  paragraph: {
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.2rem',
+    },
+  },
 }));
 
 export default function ProjectDetails({ data }) {
@@ -143,6 +154,7 @@ export default function ProjectDetails({ data }) {
         props: {
           paragraph: true,
           variant: 'body1',
+          className: `${classes.paragraph}`,
         },
       },
       a: {

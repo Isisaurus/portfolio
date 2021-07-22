@@ -106,7 +106,7 @@ Future improvements:
 - Organize Headers in a sequentially-decending order for a more optimized navigation experience
 - Set browser theme colors based on the page rendered
 
-The following features implemented would improve the usability and user experience of the website in the future:
+The following list of features target the usability and user experience of the website:
 
 - Add contact form for companies.
 - Add recruiter responsible for each vacancy.
@@ -157,11 +157,13 @@ In this project:
 
 Certain components from Material-UI v4.3.1 (eg.: Box) still threw an error after integrating the library with Next.js, but the styling was applied as expected.
 
-This problem has been acknowledged by both libraries and it seems to be an issue coming from Material-UI. To overcome this issue I had to remove "reactStrictMode: true," line from next.config.js.
+This problem has been acknowledged by both libraries and it seems to be an issue coming from Material-UI. To overcome this issue I had to remove `reactStrictMode: true,` line from next.config.js.
 
 Have a similar issue in your setup? This is where I found answers:
 
 - [Box component odd behavior on Next.js](https://github.com/mui-org/material-ui/issues/19679)
+
+---
 
 [## Documentation used](#documentation-used)
 
