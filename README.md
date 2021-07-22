@@ -33,9 +33,11 @@ To overcome this issue I used the following resources:
 
 ### Gatsby and the Window object
 
+To implement the scroll-to-top button feature on the project details page I needed to access the `window` object on the client side.
+
 Using the `gatsby develop` command Gatsby runs in the browser. But when building the application with `gatsby build` it happens server-side, so the window object doesn't exist. This causes the build process to fail.
 
-The `gatsby-browser.js` file "...gives you control over Gatsby’s behavior in the browser. For example, responding to a user changing routes, or calling a function when the user first opens any page."[1]
+The `gatsby-browser.js` file "...gives you control over Gatsby’s behavior in the browser. For example, responding to a user changing routes, or calling a function when the user first opens any page."[1^]
 
 To overcome this issue:
 
