@@ -1,38 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from './../components/Layout';
 import { Typography } from '@material-ui/core';
+import { navigate } from 'gatsby-link';
 
-function contact() {
+function Contact() {
+  const [email, setEmail] = useState('');
+
+  const handleChange = e => {
+    e.preventDefault();
+    setEmail(e.target.value);
+    console.log(e.target.value);
+  };
+  function encode(data) {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+  }
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': event.target.getAttribute('name'),
+        email,
+      }),
+    })
+      .then(() => navigate('/'))
+      .catch(error => alert(error));
+  };
+
   return (
     <Layout>
       <Typography variant="h1">Contact me</Typography>
       <form
-        name="contact"
-        method="POST"
         data-netlify="true"
-        data-netlify-honeypot="bot-field"
+        name="contact"
+        method="post"
+        onSubmit={handleSubmit}
       >
-        <div>
-          <label>
-            Your Name: <input type="text" name="name" />
-          </label>
-        </div>
-        <div>
-          <label>
-            Your Email: <input type="email" name="email" />
-          </label>
-        </div>
-        <div>
-          <label>
-            Message: <textarea name="message"></textarea>
-          </label>
-        </div>
-        <div>
-          <button type="submit">Send</button>
-        </div>
+        <input type="hidden" name="form-name" value="contact" />
+        <label>
+          Your email
+          <input name="email" type="text" onChange={handleChange} />
+        </label>
+        <input type="submit" />
       </form>
     </Layout>
   );
 }
 
-export default contact;
+export default Contact;
