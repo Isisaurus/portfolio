@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Layout from '../components/Layout';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
@@ -114,35 +114,35 @@ const useStyles = makeStyles(theme => ({
 export default function ProjectDetails({ data }) {
   const classes = useStyles();
 
-  // scroll-to-top behaviour
-  const [visible, setVisible] = useState(false);
-  // check if browser
-  const isBrowser = typeof window !== 'undefined';
-  const toggleVisible = () => {
-    if (isBrowser) {
-      const scrolled = document.documentElement.scrollTop;
-      if (scrolled > 300) {
-        setVisible(true);
-      } else if (scrolled <= 300) {
-        setVisible(false);
-      }
-    }
-  };
-  // event listener to window
-  if (isBrowser) {
-    window.addEventListener('scroll', toggleVisible);
-  } else {
-    setVisible(false);
-  }
-  // click event callback
-  const scrollToTop = () => {
-    if (isBrowser) {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
-    }
-  };
+  // // scroll-to-top behaviour
+  // const [visible, setVisible] = useState(false);
+  // // check if browser
+  // const isBrowser = typeof window !== 'undefined';
+  // const toggleVisible = () => {
+  //   if (isBrowser) {
+  //     const scrolled = document.documentElement.scrollTop;
+  //     if (scrolled > 300) {
+  //       setVisible(true);
+  //     } else if (scrolled <= 300) {
+  //       setVisible(false);
+  //     }
+  //   }
+  // };
+  // // event listener to window
+  // if (isBrowser) {
+  //   window.addEventListener('scroll', toggleVisible);
+  // } else {
+  //   setVisible(false);
+  // }
+  // // click event callback
+  // const scrollToTop = () => {
+  //   if (isBrowser) {
+  //     window.scrollTo({
+  //       top: 0,
+  //       behavior: 'smooth',
+  //     });
+  //   }
+  // };
 
   // desctructure markdown
   const { html } = data.markdownRemark;
@@ -307,8 +307,10 @@ export default function ProjectDetails({ data }) {
           color="primary"
           aria-label="up"
           className={classes.toTopBtn}
-          style={{ display: visible ? 'inline-block' : 'none' }}
-          onClick={scrollToTop}
+          // style={{ display: visible ? 'inline-block' : 'none' }}
+          // onClick={scrollToTop}
+          id="scroll-btn"
+          title="Scroll to top"
         >
           <ArrowUpwardIcon />
         </Fab>
