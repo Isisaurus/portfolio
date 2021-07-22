@@ -132,7 +132,7 @@ SWR (stale-while-revalidate) is an HTTP Cache revalidation strategy to fetch, re
 
 Initial data is coming from `getStaticProps( )` method, which fetches the data for the statically generated site (/vacatures) at generation time.
 
-In my project SWR works together with `getStaticProps( )` through the useSWR hook to manage the data displayed on the site. The initial data is provided by `getStaticProps( )`. The fetcher function is located in utils/contentful.js in the ContentFulApi class. The getValues() asynchronos method fetches the possible filter field values, the `callContentful( )` asynchronos method gets the "jobs" collection data entries from the Contentful Content Delivery API.
+In my project SWR works together with `getStaticProps( )` through the useSWR hook to manage the data displayed on the site. The initial data is provided by `getStaticProps( )`. The fetcher function is located in utils/contentful.js in the ContentFulApi class. The `getValues( )` asynchronos method fetches the possible filter field values, the `callContentful( )` asynchronos method gets the "jobs" collection data entries from the Contentful Content Delivery API.
 
 The `callContentful( )` method takes in two arguments which is passed into the fetcher function through the SWR key: query and page. The query is an object with keys from the possible fields for filtering in the application, the values are coming from a form filled in by the user.
 
@@ -153,7 +153,7 @@ In this project:
 
 - I used a cutom Material-UI theme (src/theme.js)
 - I wrapped my page components with a layout component (components/layout.jsx)
-- I wrote custom css for each component individually using the makeStyles() hook from Material-UI
+- I wrote custom css for each component individually using the `makeStyles( )` hook from Material-UI
 
 Certain components from Material-UI v4.3.1 (eg.: Box) still threw an error after integrating the library with Next.js, but the styling was applied as expected.
 
