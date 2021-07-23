@@ -13,8 +13,7 @@ import { Link } from 'gatsby-theme-material-ui';
 
 const useStyles = makeStyles(theme => ({
   sidebar: {
-    marginRight: '1rem',
-    padding: '10px .5rem 0',
+    padding: '0px .5rem',
     position: 'relative',
     [theme.breakpoints.down('xs')]: {
       marginRight: '0',
