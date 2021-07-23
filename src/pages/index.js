@@ -4,7 +4,6 @@ import Layout from './../components/Layout';
 import Introduction from '../components/Introduction';
 import ProjectCard from '../components/ProjectCard';
 import { Box } from '@material-ui/core';
-// import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export default function Home({ data }) {
   const projects = data.projects.nodes;

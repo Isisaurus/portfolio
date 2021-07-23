@@ -21,7 +21,7 @@ const Layout = props => {
       <div style={{ flex: 1 }}>
         <Navbar />
         <Box component="main">{props.children}</Box>
-        <footer>
+        <footer style={{ minHeight: '10vh' }}>
           <p>Copyright@2021 Diana Vitanyi</p>
         </footer>
       </div>

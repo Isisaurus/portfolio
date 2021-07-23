@@ -117,7 +117,7 @@ function Contact() {
 
   return (
     <Layout>
-      <Container style={{ minHeight: '78vh' }}>
+      <Container style={{ minHeight: '90vh' }}>
         <Grid
           container
           className={classes.gridContainer}
