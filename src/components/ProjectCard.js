@@ -29,15 +29,14 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     fontSize: '1.5rem',
-    textTransform: 'uppercase',
-    letterSpacing: '.2em',
-    fontWeight: 600,
-    margin: '1em 0',
-    lineHeight: 1.5,
-    maxWidth: '70%',
-    [theme.breakpoints.down('sm')]: {
+    margin: '1em 0 1.5em',
+    [theme.breakpoints.down('xs')]: {
       fontSize: '1.2rem',
       maxWidth: '100%',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '2rem',
+      maxWidth: '70%',
     },
   },
   thumbnail: {
@@ -119,7 +118,7 @@ function ProjectCard({ project }) {
     <Container className={classes.container}>
       <div style={{ maxWidth: '60rem' }}>
         <Link to={slug} className={classes.projectLink}>
-          <Typography variant="h1" component="h3" className={classes.title}>
+          <Typography variant="h5" component="h3" className={classes.title}>
             {title}
           </Typography>
           <GatsbyImage

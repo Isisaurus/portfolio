@@ -21,10 +21,6 @@ const useStyles = makeStyles(theme => ({
   title: {
     margin: '1em 0 .5em',
     fontSize: '1.5rem',
-    textTransform: 'uppercase',
-    letterSpacing: '.2em',
-    fontWeight: 600,
-    lineHeight: 1.5,
     [theme.breakpoints.down('sm')]: {
       marginTop: '2em',
       fontSize: '1rem',
@@ -106,11 +102,11 @@ function Contact() {
           container
           className={classes.gridContainer}
           alignItems="center"
-          justifyContent="start"
+          justifyContent="flex-start"
         >
           <Grid item sm={12} md={6} container>
             <Container>
-              <Typography variant="h4" component="h2" className={classes.title}>
+              <Typography variant="h5" component="h2" className={classes.title}>
                 Send me a message
               </Typography>
               <form

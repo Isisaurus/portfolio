@@ -17,6 +17,18 @@ const theme = createTheme({
     h3: {
       fontWeight: 500,
     },
+    h4: {
+      fontWeight: 600,
+      textTransform: 'uppercase',
+      letterSpacing: '.2em',
+      lineHeight: 1.5,
+    },
+    h5: {
+      fontWeight: 600,
+      textTransform: 'uppercase',
+      letterSpacing: '.1em',
+      lineHeight: 1.5,
+    },
     h6: {
       fontWeight: 500,
       textTransform: 'uppercase',

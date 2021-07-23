@@ -24,21 +24,36 @@ const useStyles = makeStyles(theme => ({
     },
   },
   buttonContainer: {
-    margin: '1rem 0 2rem',
+    margin: '1rem 0 4rem',
+    [theme.breakpoints.down('sm')]: {
+      margin: '1rem 0 2rem',
+    },
   },
   title: {
-    fontSize: '2.5rem',
-    lineHeight: '1.5',
+    fontSize: '1.5rem',
+    margin: '1em 0 .5em',
     [theme.breakpoints.down('xs')]: {
-      fontSize: '1.5rem',
-      color: theme.palette.primary.main,
+      fontSize: '1.2rem',
+      maxWidth: '100%',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '2rem',
+      maxWidth: '70%',
     },
   },
   header: {
     display: 'block',
     margin: '2.5em 0 1em',
+    fontSize: '1.5rem',
     '&:hover': {
       textDecoration: 'none',
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1rem',
+      fontWeight: 700,
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.8rem',
     },
   },
   header2: {
@@ -149,7 +164,7 @@ export default function ProjectDetails({ data }) {
       h3: {
         component: Typography,
         props: {
-          variant: 'h5',
+          variant: 'h6',
           component: 'span',
           color: 'primary',
           className: `${classes.header2}`,
@@ -207,7 +222,7 @@ export default function ProjectDetails({ data }) {
     <Layout>
       <Container>
         <div className={classes.intro}>
-          <Typography variant="h1" component="h2" className={classes.title}>
+          <Typography variant="h5" component="h2" className={classes.title}>
             {title}
           </Typography>
           <div className={classes.buttonContainer}>
