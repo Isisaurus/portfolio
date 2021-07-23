@@ -45,8 +45,11 @@ const useStyles = makeStyles(theme => ({
     display: 'block',
     margin: '2.5em 0 1em',
     fontSize: '1.5rem',
+    transition: 'all 0.2s ease',
     '&:hover': {
       textDecoration: 'none',
+      color: [theme.palette.primary.light],
+      transition: 'all 0.2s ease',
     },
     [theme.breakpoints.down('sm')]: {
       fontSize: '1rem',
