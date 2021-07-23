@@ -230,7 +230,7 @@ export default function ProjectDetails({ data }) {
               startIcon={<LanguageIcon />}
               color="primary"
               variant="text"
-              size="small"
+              size="large"
               style={{ marginRight: '.5rem' }}
             >
               <Link
@@ -245,7 +245,7 @@ export default function ProjectDetails({ data }) {
               startIcon={<CodeIcon />}
               color="primary"
               variant="text"
-              size="small"
+              size="large"
             >
               <Link
                 to={`${github}`}
@@ -279,7 +279,7 @@ export default function ProjectDetails({ data }) {
             startIcon={<LanguageIcon />}
             color="primary"
             variant="text"
-            size="small"
+            size="large"
             style={{ marginRight: '.5rem' }}
           >
             <Link
@@ -294,7 +294,7 @@ export default function ProjectDetails({ data }) {
             startIcon={<CodeIcon />}
             color="primary"
             variant="text"
-            size="small"
+            size="large"
           >
             <Link
               to={`${github}`}
