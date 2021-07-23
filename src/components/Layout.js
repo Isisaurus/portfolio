@@ -20,9 +20,7 @@ const Layout = props => {
     <div className={classes.container}>
       <div style={{ flex: 1 }}>
         <Navbar />
-        <Box component="main" className="content">
-          {props.children}
-        </Box>
+        <Box component="main">{props.children}</Box>
         <footer>
           <p>Copyright@2021 Diana Vitanyi</p>
         </footer>
