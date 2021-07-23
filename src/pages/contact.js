@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from './../components/Layout';
+import ContactMessage from '../components/ContactMessage';
 import {
   Typography,
   TextField,
@@ -10,7 +11,6 @@ import {
   List,
   SvgIcon,
 } from '@material-ui/core';
-import { navigate } from 'gatsby-link';
 import { Link } from 'gatsby-theme-material-ui';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import SendIcon from '@material-ui/icons/Send';
@@ -64,15 +64,25 @@ function Contact() {
   const classes = useStyles();
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+
+  useEffect(() => {
+    if (error || success) {
+      setTimeout(() => {
+        setError(null);
+        setSuccess(null);
+      }, 5000);
+    }
+  }, [error, success]);
 
   const handleChangeEmail = e => {
-    e.preventDefault();
     setEmail(e.target.value);
+    e.preventDefault();
   };
   const handleChangeMessage = e => {
     e.preventDefault();
     setMessage(e.target.value);
-    console.log(e.target.value);
   };
   function encode(data) {
     return Object.keys(data)
@@ -91,8 +101,18 @@ function Contact() {
         message,
       }),
     })
-      .then(() => navigate('/contact'))
-      .catch(error => alert(error));
+      .then(() => {
+        // // clear form
+        setEmail('');
+        setMessage('');
+        // show message
+        setSuccess(
+          'Your message was successfully sent! I will get back to you soon.'
+        );
+      })
+      .catch(error => {
+        setError(error);
+      });
   };
 
   return (
@@ -115,6 +135,7 @@ function Contact() {
                 method="post"
                 onSubmit={handleSubmit}
                 className={classes.form}
+                id="contact-form"
               >
                 <input type="hidden" name="form-name" value="contact" />
 
@@ -122,6 +143,7 @@ function Contact() {
                   name="email"
                   type="email"
                   label="Your email"
+                  value={email}
                   onChange={handleChangeEmail}
                   required
                   color="primary"
@@ -135,6 +157,7 @@ function Contact() {
                 <TextField
                   name="message"
                   type="text"
+                  value={message}
                   label="Your message"
                   onChange={handleChangeMessage}
                   required
@@ -160,6 +183,7 @@ function Contact() {
                   Send
                 </Button>
               </form>
+              <ContactMessage error={error} success={success} />
             </Container>
           </Grid>
           <Grid item sm={12} md={6} container>
