@@ -22,6 +22,12 @@ const theme = createTheme({
       textTransform: 'uppercase',
       letterSpacing: '.1em',
     },
+    body1: {
+      fontWeight: 500,
+    },
+    body2: {
+      fontWeight: 500,
+    },
   },
   palette: {
     primary: {

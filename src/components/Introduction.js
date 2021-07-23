@@ -5,6 +5,7 @@ const useStyles = makeStyles(theme => ({
   introHeader: {
     textTransform: 'uppercase',
     letterSpacing: '.2em',
+    fontWeight: 600,
 
     [theme.breakpoints.down('xs')]: {
       marginTop: '1em',

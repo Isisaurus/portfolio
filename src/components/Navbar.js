@@ -90,7 +90,7 @@ const useStyles = makeStyles(theme => ({
   },
   navItem: {
     fontSize: '1rem',
-    fontWeight: 600,
+    fontWeight: 400,
 
     [theme.breakpoints.down('xs')]: {
       fontSize: '.8rem',

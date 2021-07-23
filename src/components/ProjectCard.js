@@ -14,7 +14,7 @@ import CodeIcon from '@material-ui/icons/Code';
 const useStyles = makeStyles(theme => ({
   projectLink: {
     textDecoration: 'none',
-    color: theme.palette.text.secondary,
+    color: theme.palette.text.primary,
     transition: 'color 0.2s ease',
     '&:hover': {
       textDecoration: 'none',
@@ -28,12 +28,16 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
   },
   title: {
-    fontSize: '2.5rem',
-    marginBottom: '1em',
-    lineHeight: '1.5',
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '1.5rem',
-      color: theme.palette.primary.main,
+    fontSize: '1.5rem',
+    textTransform: 'uppercase',
+    letterSpacing: '.2em',
+    fontWeight: 600,
+    margin: '1em 0',
+    lineHeight: 1.5,
+    maxWidth: '70%',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.2rem',
+      maxWidth: '100%',
     },
   },
   thumbnail: {
@@ -53,6 +57,7 @@ const useStyles = makeStyles(theme => ({
   },
   description: {
     color: theme.palette.text.primary,
+    fontWeight: 500,
     '&:hover': {
       color: theme.palette.text.primary,
     },

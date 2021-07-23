@@ -7,6 +7,7 @@ const useStyles = makeStyles({
   link: {
     textDecoration: 'none',
     color: 'inherit',
+    fontWeight: 400,
     '&:hover': {
       textDecoration: 'none',
     },
@@ -32,7 +33,7 @@ export default function Logo() {
           component="h1"
           variant="overline"
           color="textPrimary"
-          style={{ fontSize: '1rem', letterSpacing: '.2em' }}
+          style={{ fontSize: '1rem', letterSpacing: '.2em', lineHeight: 1 }}
         >
           {title}
         </Typography>
