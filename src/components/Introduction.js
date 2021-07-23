@@ -33,6 +33,7 @@ const useStyles = makeStyles(theme => ({
   },
   introSection: {
     minHeight: '65vh',
+    maxHeight: '45rem',
     display: 'flex',
     alignItems: 'center',
     marginBottom: '4rem',

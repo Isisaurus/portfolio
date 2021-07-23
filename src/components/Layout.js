@@ -1,12 +1,14 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
+import Footer from './Footer';
 import { Box, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
     flexDirection: 'row-reverse',
+    minHeight: '100vh',
 
     [theme.breakpoints.down('xs')]: {
       flexDirection: 'column-reverse',
@@ -20,10 +22,10 @@ const Layout = props => {
     <div className={classes.container}>
       <div style={{ flex: 1 }}>
         <Navbar />
-        <Box component="main">{props.children}</Box>
-        <footer style={{ minHeight: '10vh' }}>
-          <p>Copyright@2021 Diana Vitanyi</p>
-        </footer>
+        <Box component="main" style={{ minHeight: '80vh' }}>
+          {props.children}
+        </Box>
+        <Footer />
       </div>
       <Sidebar />
     </div>
