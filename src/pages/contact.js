@@ -91,7 +91,7 @@ function Contact() {
         message,
       }),
     })
-      .then(() => navigate('/'))
+      .then(() => navigate('/contact'))
       .catch(error => alert(error));
   };
 
