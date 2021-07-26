@@ -42,9 +42,7 @@ const useStyles = makeStyles(theme => ({
   thumbnail: {
     boxShadow: '0.5rem .8rem 1rem rgba(0,0,0, 0.2)',
     transition: 'all 0.2s ease-out',
-    opacity: '.9',
     '&:hover': {
-      opacity: '1',
       boxShadow: '0.25rem 1rem 1.5rem rgba(0,0,0, 0.1)',
       transition: 'all 0.2s ease-in',
       transform: 'translateY(-3px)',
