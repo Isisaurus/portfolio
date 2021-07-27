@@ -32,13 +32,15 @@ const useStyles = makeStyles(theme => ({
     },
   },
   introSection: {
-    minHeight: '65vh',
+    height: '65vh',
+    minHeight: '30rem',
     maxHeight: '45rem',
     display: 'flex',
     alignItems: 'center',
     marginBottom: '4rem',
     [theme.breakpoints.down('xs')]: {
       minHeight: '50vh',
+      height: 'auto',
       marginBottom: '10vh',
     },
   },
