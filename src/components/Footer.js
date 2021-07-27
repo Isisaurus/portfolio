@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'flex-start',
     minHeight: '10vh',
     marginTop: '2rem',
-    padding: '1rem 0',
+    padding: '1.5rem',
     [theme.breakpoints.down('xs')]: {
       alignItems: 'center',
     },
