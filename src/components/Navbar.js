@@ -32,6 +32,7 @@ const useStyles = makeStyles(theme => ({
     marginLeft: '3.5em',
     color: 'inherit',
     position: 'relative',
+    fontWeight: 500,
 
     [theme.breakpoints.down('sm')]: {
       marginLeft: '1.5em',
@@ -68,6 +69,7 @@ const useStyles = makeStyles(theme => ({
   },
   active: {
     color: theme.palette.text.secondary,
+    fontWeight: 600,
     '&::after': {
       content: '" "',
       position: 'absolute',
@@ -90,7 +92,7 @@ const useStyles = makeStyles(theme => ({
   },
   navItem: {
     fontSize: '1rem',
-    fontWeight: 400,
+    fontWeight: 'inherit',
 
     [theme.breakpoints.down('xs')]: {
       fontSize: '.8rem',
