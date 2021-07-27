@@ -259,7 +259,11 @@ export default function ProjectDetails({ data }) {
               </Link>
             </Button>
           </div>
-          <GatsbyImage image={getImage(image)} alt={`${title} thumbnail`} />
+          <GatsbyImage
+            image={getImage(image)}
+            alt={`${title} thumbnail`}
+            style={{ maxWidth: '60rem' }}
+          />
           <div className={classes.stackImgContainer}>
             {stackArr.length
               ? stackArr.map((el, i) => (
