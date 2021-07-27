@@ -7,7 +7,11 @@ const useStyles = makeStyles({
   link: {
     textDecoration: 'none',
     color: 'inherit',
-    fontWeight: 400,
+    fontWeight: 500,
+    fontSize: '1rem',
+    letterSpacing: '.2em',
+    lineHeight: 1,
+    textTransform: 'uppercase',
     '&:hover': {
       textDecoration: 'none',
     },
@@ -29,12 +33,7 @@ export default function Logo() {
   return (
     <Hidden xsDown>
       <Link to="/" className={classes.link}>
-        <Typography
-          component="h1"
-          variant="overline"
-          color="textPrimary"
-          style={{ fontSize: '1rem', letterSpacing: '.2em', lineHeight: 1 }}
-        >
+        <Typography component="h1" color="textPrimary">
           {title}
         </Typography>
       </Link>
