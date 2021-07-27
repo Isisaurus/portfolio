@@ -1,6 +1,18 @@
 module.exports = {
   /* Your site config here */
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `DianaVitanyiPortfolio`,
+        short_name: `DianaVitanyiPortfolio`,
+        start_url: `/`,
+        background_color: `#f9f9f9`,
+        theme_color: `#6B6AB8`,
+        display: `standalone`,
+        icon: `src/images/favicon.png`,
+      },
+    },
     'gatsby-transformer-remark',
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
