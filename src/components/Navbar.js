@@ -16,6 +16,9 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('xs')]: {
       padding: '0 .5rem',
     },
+    [theme.breakpoints.up('xl')]: {
+      padding: '0 10vw',
+    },
   },
   Toolbar: {
     marginLeft: 'auto',
