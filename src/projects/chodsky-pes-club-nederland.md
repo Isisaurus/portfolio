@@ -3,7 +3,7 @@ title: CPCN.nl & API
 stack: MongoDB,Mongoose,PUG,Node.js,Express.js,SASS,JWT
 slug: chodsky-pes-club-nederland
 live: https://cpcn.herokuapp.com/
-github: https://github.com/Isisaurus/tech-recruitment-website
+github: https://github.com/Isisaurus/cpcn
 image: ../images/thumbnails/chodsky-pes-club-nederland.jpg
 date: 2021-01-01T00:00:00+00:00
 description: This application is a server-side rendered website with a REST API in the back-end connected to a MongoDB noSQL database, all structured in the MVC architecture.
@@ -19,23 +19,23 @@ description: This application is a server-side rendered website with a REST API 
 6. [Code architecture-MVC](#code-architecture-mvc)
 7. [The front-end](#the-front-end)
 
-   7.1. [Styling](#styling)
+   7.1 [Styling](#styling)
 
-   7.2. [Client-side Javascript](#client-side-javascript)
+   7.2 [Client-side Javascript](#client-side-javascript)
 
 8. [The back-end](#the-back-end)
 
-   8.1. [The "join us" process](#the-join-us-process)
+   8.1 [The "join us" process](#the-join-us-process)
 
-   8.2. [Mongoose models](#mongoose-models)
+   8.2 [Mongoose models](#mongoose-models)
 
-   8.3. [From incoming request to sending response in MVC](#from-incoming-request-to-sending-response-in-mvc)
+   8.3 [From incoming request to sending response in MVC](#from-incoming-request-to-sending-response-in-mvc)
 
-   8.4. [Fat models/thin controllers](#fat-modelsthin-controllers)
+   8.4 [Fat models/thin controllers](#fat-modelsthin-controllers)
 
-   8.5. [Security](#security)
+   8.6 [Security](#security)
 
-   8.6. [Error handling](#error-handling)
+   8.7 [Error handling](#error-handling)
 
 9. [The future of the project](#the-future-of-the-project)
 
@@ -125,7 +125,7 @@ Due to the MVC architecture the application is modular and easy to add more laye
 
 [## The front-end](#the-front-end)
 
-[#### Styling](#styling)
+[### Styling](#styling)
 
 The website is styled using fully custom SASS using BEM (Block-Element-Modifier) naming convention.
 
@@ -140,7 +140,7 @@ The styling contains:
 - media queries for responsivity,
 - CSS grid and flexbox for layouts
 
-[#### Client-side Javascript](#client-side-javascript)
+[### Client-side Javascript](#client-side-javascript)
 
 To write client-side Javascript I have used parcel to package multiple ES6 modules written to handle a certain interaction with the page.
 
@@ -154,7 +154,7 @@ The `calculateFees( )` in `membership.js` retrieves the membership fee informati
 
 [## The back-end](#the-back-end)
 
-[#### The "join us" process](#the-join-us-process)
+[### The "join us" process](#the-join-us-process)
 
 The website enables users to apply for a membership using the form under page `/join`.
 
@@ -164,7 +164,7 @@ The website enables users to apply for a membership using the form under page `/
 - The membership fee is automatically calculated based on the inputs on the client-side using the functions defined in `public/js/membership.js` and the data from the `membership collection` of the database
 - After clicking `indienen` at the bottom of the overview modal the application data is sent to the club's administration email based on the template `views/emails/details.pug` and a confirmation is send to the applicant using the `views/emails/welcome.pug` containing the calculated membership fee
 
-[#### Mongoose models](#mongoose-models)
+[### Mongoose models](#mongoose-models)
 
 To store all instances required for the website, I have created different collections for each named according to the type of data.
 
@@ -172,15 +172,15 @@ The website currently uses 6 different collections.
 
 Each collections' data is defined based on Mongoose schemas found in `/models`.
 
-[#### From incoming request to sending response in MVC](#from-incoming-request-to-sending-response-in-mvc)
+[### From incoming request to sending response in MVC](#from-incoming-request-to-sending-response-in-mvc)
 
 An incoming request first hits the router, one for each resource, and delegated the request to the controller which runs the correct handler function. Based on the type of request the controller function will interact with the model of the resource. Now the controller is ready to send back a response. If there is a view attached, the data is injected in the requested template and sent to be rendered for the client.
 
-[#### Fat models/thin controllers](#fat-modelsthin-controllers)
+[### Fat models/thin controllers](#fat-modelsthin-controllers)
 
 To keep the controllers clean and simple, I have offloaded as much logic as possible into the models when refractoring the code. This way it is ensured that the controllers are simply bridges between models and views for each resource. The `/controllers/handleFactory.js` file is responsible to keep the all the other controllers dry, avoiding repeating code for fulfilling similar requests and sending responses formatted in JSend.
 
-[#### Security](#security)
+[### Security](#security)
 
 - Error handling in production: no error information leaked to user
 - User password saved to database encrypted
@@ -194,7 +194,7 @@ To keep the controllers clean and simple, I have offloaded as much logic as poss
 - JWT stored in HTTPOnly cookies, expires in 24 hours
 - highly defined Mongoose Schemas for safe database documents with custom validation if required
 
-[#### Error handling](#error-handling)
+[### Error handling](#error-handling)
 
 - Global error handling middleware inside `controllers/errorController.js`: marks operational errors, separates 400 errors, handles development and production error messages
 - MongoDB built in error handling: duplicate fields etc.
