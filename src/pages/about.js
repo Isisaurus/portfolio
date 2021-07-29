@@ -4,9 +4,9 @@ import { Container, Typography, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   container: {
-    margin: '4rem 0',
+    marginTop: '4rem',
     [theme.breakpoints.down('sm')]: {
-      margin: '2rem 0',
+      marginTop: '2rem',
     },
   },
 }));
@@ -16,7 +16,7 @@ const About = () => {
   return (
     <Layout>
       <Container className={classes.container}>
-        <Typography variant="h5">
+        <Typography variant="body1">
           {' '}
           Sorry. This page is under construction.
         </Typography>

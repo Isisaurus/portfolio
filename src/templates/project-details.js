@@ -229,35 +229,36 @@ export default function ProjectDetails({ data }) {
             {title}
           </Typography>
           <div className={classes.buttonContainer}>
-            <Button
-              startIcon={<LanguageIcon />}
-              color="primary"
-              variant="text"
-              size="large"
-              style={{ marginRight: '.5rem' }}
+            <Link
+              to={`${live}`}
+              target="__blank"
+              style={{ textDecoration: 'none' }}
             >
-              <Link
-                to={`${live}`}
-                target="__blank"
-                style={{ textDecoration: 'none' }}
+              <Button
+                startIcon={<LanguageIcon />}
+                color="primary"
+                variant="text"
+                size="large"
+                style={{ marginRight: '.5rem' }}
               >
                 live server
-              </Link>
-            </Button>
-            <Button
-              startIcon={<CodeIcon />}
-              color="primary"
-              variant="text"
-              size="large"
+              </Button>
+            </Link>
+
+            <Link
+              to={`${github}`}
+              target="__blank"
+              style={{ textDecoration: 'none' }}
             >
-              <Link
-                to={`${github}`}
-                target="__blank"
-                style={{ textDecoration: 'none' }}
+              <Button
+                startIcon={<CodeIcon />}
+                color="primary"
+                variant="text"
+                size="large"
               >
                 code
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </div>
           <GatsbyImage
             image={getImage(image)}
@@ -282,35 +283,35 @@ export default function ProjectDetails({ data }) {
         </div>
         <ReactMarkdown id="documentation" options={options} children={html} />
         <div className={classes.buttonContainer} style={{ margin: '2rem 0' }}>
-          <Button
-            startIcon={<LanguageIcon />}
-            color="primary"
-            variant="text"
-            size="large"
-            style={{ marginRight: '.5rem' }}
+          <Link
+            to={`${live}`}
+            target="__blank"
+            style={{ textDecoration: 'none' }}
           >
-            <Link
-              to={`${live}`}
-              target="__blank"
-              style={{ textDecoration: 'none' }}
+            <Button
+              startIcon={<LanguageIcon />}
+              color="primary"
+              variant="text"
+              size="large"
+              style={{ marginRight: '.5rem' }}
             >
               live server
-            </Link>
-          </Button>
-          <Button
-            startIcon={<CodeIcon />}
-            color="primary"
-            variant="text"
-            size="large"
+            </Button>
+          </Link>
+          <Link
+            to={`${github}`}
+            target="__blank"
+            style={{ textDecoration: 'none' }}
           >
-            <Link
-              to={`${github}`}
-              target="__blank"
-              style={{ textDecoration: 'none' }}
+            <Button
+              startIcon={<CodeIcon />}
+              color="primary"
+              variant="text"
+              size="large"
             >
               code
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </div>
       </Container>
       <div className={classes.fabContainer}>

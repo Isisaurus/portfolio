@@ -198,33 +198,33 @@ function Contact() {
                     dianavitanyi@gmail.com
                   </Link>
                 </Button>
-                <Button className={classes.btn} startIcon={<GitHubIcon />}>
-                  <Link
-                    to="https://github.com/Isisaurus"
-                    target="__blank"
-                    className={classes.link}
-                  >
-                    github/Isisaurus
-                  </Link>
-                </Button>
-                <Button className={classes.btn} startIcon={<LinkedInIcon />}>
-                  <Link
-                    to="https://www.linkedin.com/in/diana-vitanyi-49211a15a/"
-                    target="__blank"
-                    className={classes.link}
-                  >
-                    linkedin/diana-vitanyi-49211a15a
-                  </Link>
-                </Button>
-
-                <Button
-                  className={classes.btn}
-                  startIcon={<PictureAsPdfIcon />}
+                <Link
+                  to="https://github.com/Isisaurus"
+                  target="__blank"
+                  className={classes.link}
                 >
-                  <Link to="#" target="__blank" className={classes.link}>
+                  <Button className={classes.btn} startIcon={<GitHubIcon />}>
+                    github/Isisaurus
+                  </Button>
+                </Link>
+                <Link
+                  to="https://www.linkedin.com/in/diana-vitanyi-49211a15a/"
+                  target="__blank"
+                  className={classes.link}
+                >
+                  <Button className={classes.btn} startIcon={<LinkedInIcon />}>
+                    linkedin/diana-vitanyi-49211a15a
+                  </Button>
+                </Link>
+
+                <Link to="#" target="__blank" className={classes.link}>
+                  <Button
+                    className={classes.btn}
+                    startIcon={<PictureAsPdfIcon />}
+                  >
                     CV
-                  </Link>
-                </Button>
+                  </Button>
+                </Link>
               </List>
             </Container>
           </Grid>

@@ -127,45 +127,44 @@ function ProjectCard({ project }) {
         </Link>
         <Divider style={{ margin: '2rem 0 0' }} />
         <Container className={classes.buttonContainer}>
-          <Button
-            startIcon={<LanguageIcon />}
-            color="primary"
-            variant="text"
-            size="small"
-            style={{ marginRight: '.5rem' }}
+          <Link
+            to={`${live}`}
+            target="__blank"
+            style={{ textDecoration: 'none' }}
           >
-            <Link
-              to={`${live}`}
-              target="__blank"
-              style={{ textDecoration: 'none' }}
+            <Button
+              startIcon={<LanguageIcon />}
+              color="primary"
+              variant="text"
+              size="small"
+              style={{ marginRight: '.5rem' }}
             >
               live server
-            </Link>
-          </Button>
-          <Button
-            startIcon={<CodeIcon />}
-            color="primary"
-            variant="text"
-            size="small"
+            </Button>
+          </Link>
+          <Link
+            to={`${github}`}
+            target="__blank"
+            style={{ textDecoration: 'none' }}
           >
-            <Link
-              to={`${github}`}
-              target="__blank"
-              style={{ textDecoration: 'none' }}
+            <Button
+              startIcon={<CodeIcon />}
+              color="primary"
+              variant="text"
+              size="small"
             >
               code
-            </Link>
-          </Button>
-          <Button
-            color="primary"
-            variant="text"
-            size="small"
+            </Button>
+          </Link>
+          <Link
+            to={slug}
+            style={{ textDecoration: 'none' }}
             className={classes.readmoreBtn}
           >
-            <Link to={slug} style={{ textDecoration: 'none' }}>
+            <Button color="primary" variant="text" size="small">
               read more
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </Container>
         <Container>
           <Typography variant="body1" paragraph className={classes.description}>
