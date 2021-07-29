@@ -1,11 +1,43 @@
-## Documentation used to create this project
+This project is my Web Development portfolio.
 
-- [Material-UI: Gatsby.js example repository](https://github.com/mui-org/material-ui/tree/master/examples/gatsby)
-- [Gatsby.js documentation](https://www.gatsbyjs.com/docs/)
-- [Gatsby.js plugin library](https://www.gatsbyjs.com/plugins)
-- [Gatsby.js plugin: gatsby-material-ui](https://www.gatsbyjs.com/plugins/gatsby-theme-material-ui/?=gatsby-theme-material-ui)
-- [MUI JSS Rendering](https://galenwong.github.io/blog/2020-02-27-mui-jss-rendering/)
-- [Netlify: Submit JavaScript-rendered forms with AJAX](https://docs.netlify.com/forms/setup/)
+## Deployed on Netlify
+
+Access the live version of my portfolio under [https://diana-vitanyi.netlify.app/](https://diana-vitanyi.netlify.app/).
+
+## Running this project locally
+
+1. Clone this repository and open it in your Code Editor of choice.
+
+2. Open the terminal in your Code Editor.
+
+3. Install the packages required to run the project by running:
+
+```bash
+npm install
+
+```
+
+4. After installation run the development server with:
+
+```bash
+npm run develop
+
+```
+
+5. The live site is running on [http://localhost:8000](http://localhost:8000).
+
+6. You can start editing the page by modifying the files in `src/pages`. The page auto-updates as you edit the file.
+
+## Technology used
+
+This app is
+
+- created using the Gatbsy.js `gatsby-cli`,
+- styled using a custom MaterialUI theme,
+- the project documentations are loaded from markdown files,
+- the content is distributed using the Gatsby content Mesh and GraphQL.
+
+The project runs client-side Javascript from `gatsby-browser.js`.
 
 ## Issues and Solutions during development
 
@@ -25,7 +57,7 @@ To add a Table of Contents linked to the topics I needed a dynamic id for each h
 
 To overcome this issue I replaced each heading with a link and placed the header element inside. The `<a/>` rendered from the markdown files with this change had the ids needed.
 
-When configuring the `jsx` generated from the markdown using the `markdown-to-jsx` npm package I could no longer add the `target="__blank"` prop to all the `<a/>` on the project details page, else the Table of Contents links would also open new pages.
+When configuring the `jsx` generated from the markdown using the `markdown-to-jsx` npm package I could no longer add the `target="__blank"` prop to all the `<a/>` on the project details page, else the Table of Contents links would also open new pages. Therefore, I have added logic to the `gatsby-browser.js`, which gets executed when the app is running in a browser and adds the correct `target` attribute to the clicked link based on the `href`.
 
 To overcome this issue I used the following resources:
 
@@ -51,3 +83,12 @@ The following articles and documentation helped me overcome this issue:
 - [Scroll to top button in Gatsby](https://pakjiddat.netlify.app/posts/adding-scroll-to-top-button-to-gatsby-website)
 - [Gatsby Documentation: onRouteUpdate function](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/)
 - [1]: [Gatsby Documentation: API Files](https://www.gatsbyjs.com/docs/api-files/#gatsby-skip-here)
+
+## Documentation used to create this project
+
+- [Material-UI: Gatsby.js example repository](https://github.com/mui-org/material-ui/tree/master/examples/gatsby)
+- [Gatsby.js documentation](https://www.gatsbyjs.com/docs/)
+- [Gatsby.js plugin library](https://www.gatsbyjs.com/plugins)
+- [Gatsby.js plugin: gatsby-material-ui](https://www.gatsbyjs.com/plugins/gatsby-theme-material-ui/?=gatsby-theme-material-ui)
+- [MUI JSS Rendering](https://galenwong.github.io/blog/2020-02-27-mui-jss-rendering/)
+- [Netlify: Submit JavaScript-rendered forms with AJAX](https://docs.netlify.com/forms/setup/)
