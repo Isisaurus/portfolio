@@ -36,6 +36,17 @@ const useStyles = makeStyles(theme => ({
       fontSize: '1.2rem',
     },
   },
+  link: {
+    textDecoration: 'none',
+    '&:hover': {
+      textDecoration: 'none',
+    },
+  },
+  btn: {
+    '&:hover': {
+      color: [theme.palette.primary.main],
+    },
+  },
 }));
 
 const About = () => {
