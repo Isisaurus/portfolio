@@ -189,15 +189,15 @@ function Contact() {
           <Grid item sm={12} md={6} container>
             <Container>
               <List className={classes.list}>
-                <Button className={classes.btn} startIcon={<EmailIcon />}>
-                  <Link
-                    to="mailto:dianavitanyi@gmail.com"
-                    target="__blank"
-                    className={classes.link}
-                  >
+                <Link
+                  to="mailto:dianavitanyi@gmail.com"
+                  target="__blank"
+                  className={classes.link}
+                >
+                  <Button className={classes.btn} startIcon={<EmailIcon />}>
                     dianavitanyi@gmail.com
-                  </Link>
-                </Button>
+                  </Button>
+                </Link>
                 <Link
                   to="https://github.com/Isisaurus"
                   target="__blank"
