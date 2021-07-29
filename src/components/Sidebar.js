@@ -79,7 +79,11 @@ function Sidebar() {
             <LinkedInIcon />
           </IconButton>
         </Link>
-        <Link to="#" target="__blank" className={classes.link}>
+        <Link
+          to="https://drive.google.com/file/d/1FwVPdE0hJa12X0_raExiTkwdpeaPIyXy/view?usp=sharing"
+          target="__blank"
+          className={classes.link}
+        >
           <IconButton className={classes.iconbtn}>
             <Typography variant="button" className={classes.cv}>
               CV
