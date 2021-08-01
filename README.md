@@ -37,7 +37,7 @@ This app is
 - the project documentations are loaded from markdown files,
 - the content is distributed using the Gatsby content Mesh and GraphQL.
 
-The project runs client-side Javascript from `gatsby-browser.js`.
+The project runs client-side JavaScript from `gatsby-browser.js`.
 
 ## Issues and Solutions during development
 

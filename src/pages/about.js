@@ -60,7 +60,7 @@ const About = () => {
             <br />
             <br />
             My name is Diana. I’m a Web Developer with a background in product
-            design and a passion about all things Javascript. I work hard, I
+            design and a passion about all things JavaScript. I work hard, I
             care about writing clean code and I genuinely love to learn.
           </Typography>
           <Typography paragraph variant="body1" className={classes.paragraph}>
@@ -70,7 +70,7 @@ const About = () => {
             <ListItem>Figma</ListItem>
             <ListItem>HTML5/CSS3</ListItem>
             <ListItem>SASS</ListItem>
-            <ListItem>Javascript</ListItem>
+            <ListItem>JavaScript</ListItem>
             <ListItem>React.js</ListItem>
             <ListItem>Node.js</ListItem>
           </List>

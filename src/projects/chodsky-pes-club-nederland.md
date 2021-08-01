@@ -21,7 +21,7 @@ description: This application is a server-side rendered website with a REST API 
 
    7.1 [Styling](#styling)
 
-   7.2 [Client-side Javascript](#client-side-javascript)
+   7.2 [Client-side JavaScript](#client-side-javascript)
 
 8. [The back-end](#the-back-end)
 
@@ -109,7 +109,7 @@ This application is a server-side rendered website with a REST API in the back-e
 - MongoDB hosted with Atlas as database
 - Mongoose for schemas and models
 - pug for page templating and HTML emails
-- ES6 modules for client-side Javascript
+- ES6 modules for client-side JavaScript
 - SASS for styling and animations
 - JWT for authentication
 
@@ -140,11 +140,11 @@ The styling contains:
 - media queries for responsivity,
 - CSS grid and flexbox for layouts
 
-[### Client-side Javascript](#client-side-javascript)
+[### Client-side JavaScript](#client-side-javascript)
 
-To write client-side Javascript I have used parcel to package multiple ES6 modules written to handle a certain interaction with the page.
+To write client-side JavaScript I have used parcel to package multiple ES6 modules written to handle a certain interaction with the page.
 
-Find the Javascript files used in the `/public/js` folder.
+Find the JavaScript files used in the `/public/js` folder.
 
 Most of the code is responsible for sending HTTP requests from the client-side and displaying feedback messages for the user based on the response. The `alert.js` file contains the conditional feedback message rendering functionality.
 
