@@ -1,6 +1,9 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import 'tailwindcss-animated';
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -8,10 +11,15 @@ body {
   @apply text-base;
 }
 
-a, button[type="button"] {
+a,
+button[type='button'] {
   @apply cursor-pointer;
 }
 
 .button {
   @apply px-5 py-3 text-center text-base font-semibold border border-neutral-700 text-neutral-700 hover:bg-gray-200/80 transition-all ease-in;
+}
+
+.gradient {
+  @apply bg-gradient-to-b from-[#f3e7e9] to-[#e3eeff] bg-no-repeat bg-cover;
 }
