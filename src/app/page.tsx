@@ -6,12 +6,12 @@ export default function Home() {
   return (
     <main className="px-3 md:px-6 py-6">
       <section className="mx-auto max-w-5xl">
-        <div className="flex gap-10 min-h-[70vh]">
+        <div className="flex gap-10 min-h-[65vh]">
           {/* left column */}
           <div className="flex flex-col flex-1">
-            <div className="flex flex-col text-lg">
+            <div className="flex flex-col text-lg mt-10">
               <span>Hello, my name is</span>
-              <h1 className="text-3xl md:text-5xl uppercase my-5 tracking-widest">
+              <h1 className="text-3xl leading-8 md:text-5xl md:leading-15 uppercase my-5 tracking-widest">
                 Diana Vitanyi
               </h1>
               <span>I am a Web Developer.</span>
@@ -25,7 +25,7 @@ export default function Home() {
                   <span className="sr-only">
                     LinkedIn Account External Link
                   </span>
-                  <ImLinkedin className="size-10" />
+                  <ImLinkedin className="size-6 md:size-10" />
                 </Link>
               </li>
               <li>
@@ -34,14 +34,14 @@ export default function Home() {
                   className="text-neutral-700 hover:text-neutral-500"
                 >
                   <span className="sr-only">Github Account External Link</span>
-                  <ImGithub className="size-10 " />
+                  <ImGithub className="size-6 md:size-10" />
                 </Link>
               </li>
 
               <li>
                 <Link href={'/'}>
                   <span className="sr-only">CV External Link</span>
-                  <span className="font-semibold text-lg border border-neutral-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-neutral-500/20">
+                  <span className="font-semibold text-xs md:text-lg border border-neutral-700 w-6 h-6 md:w-10 md:h-10 rounded-full flex items-center justify-center hover:bg-neutral-500/20">
                     CV
                   </span>
                 </Link>
@@ -50,7 +50,7 @@ export default function Home() {
           </div>
           {/* right column */}
           <div className="flex items-center justify-center flex-1">
-            <div className="w-[250px] h-[250px] p-5 border-2 border-neutral-800 rounded-full">
+            <div className="w-[150px] h-[150px] md:w-[250px] md:h-[250px] p-1 md:p-5 border-2 border-neutral-800 rounded-full">
               <div className="w-full h-full bg-neutral-200 rounded-full"></div>
             </div>
           </div>
