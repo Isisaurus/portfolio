@@ -2,23 +2,30 @@ import Link from 'next/link';
 import React from 'react';
 
 const NavBar = () => {
+  const navItems: { title: string; href: string }[] = [
+    {
+      title: 'my code',
+      href: '#my-code',
+    },
+  ];
+
   return (
-    <header className="w-full min-h-16 px-3 md:px-6 py-6">
+    <header className="border-b border-b-neutral-200">
       <nav>
-        <ul className="flex justify-between items-center">
-          <li>
-            <Link
-              href={'/'}
-              className="font-semibold text-neutral-500 hover:text-neutral-700"
-            >
-              <span className="uppercase tracking-wider ">Diana Vitanyi</span>
-            </Link>
-          </li>
-          <li>
-            <Link href={'/contact'} type="button" className="button">
-              <span>Contact me</span>
-            </Link>
-          </li>
+        <ul className="flex p-5 gap-5 col-start-2 row-start-1 row-end-2 items-center justify-end text-md/6 capitalize">
+          {navItems.map((navItem) => {
+            const { href, title } = navItem;
+            return (
+              <li key={title}>
+                <Link
+                  href={href}
+                  className="font-mono text-xs/6 tracking-wide text-gray-600 uppercase link px-2 hover:text-gray-700"
+                >
+                  {title}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </header>

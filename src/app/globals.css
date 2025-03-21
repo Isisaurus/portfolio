@@ -1,14 +1,19 @@
 @import 'tailwindcss';
 @import 'tailwindcss-animated';
 
+@theme {
+  --color-primary: #78dcca;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  @apply scroll-smooth;
 }
 
 body {
-  @apply text-base;
+  @apply text-base text-gray-950;
 }
 
 a,
@@ -16,10 +21,28 @@ button[type='button'] {
   @apply cursor-pointer;
 }
 
+.section {
+  @apply w-full px-2 md:px-4;
+}
+
 .button {
-  @apply px-5 py-3 text-center text-base font-semibold border border-neutral-700 text-neutral-700 hover:bg-gray-200/80 transition-all ease-in;
+  @apply px-5 py-3 text-center text-base font-semibold border border-neutral-700 text-neutral-700 hover:bg-gray-950/5 transition-all ease-in;
+}
+
+.link {
+  @apply relative w-fit block after:block after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-gray-950/5 after:w-full after:scale-x-0 after:transition after:duration-300 after:origin-center hover:after:scale-x-100;
 }
 
 .gradient {
-  @apply bg-gradient-to-b from-[#f3e7e9] to-[#e3eeff] bg-no-repeat bg-cover;
+  @apply bg-gradient-to-br to-[#f3e7e9] from-[#e3eeff] bg-no-repeat bg-cover;
+}
+
+.text-vertical {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  text-orientation: sideways;
+}
+
+.decor {
+  @apply text-gray-950/5 border-x border-x-current bg-[size:10px_10px] bg-fixed bg-[image:repeating-linear-gradient(315deg,currentColor_0,currentColor_1px,_transparent_0,_transparent_50%)];
 }

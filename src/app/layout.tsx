@@ -1,17 +1,7 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import NavBar from '@/components/NavBar';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
+import Socials from '@/components/Socials';
 
 export const metadata: Metadata = {
   title: 'Diana Vitanyi',
@@ -25,11 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased gradient min-h-screen w-full h-full`}
-      >
-        <NavBar />
-        <>{children}</>
+      <body className={`bg-neutral-50 min-h-screen flex`}>
+        <Socials />
+        <div className="flex flex-col w-full">
+          <NavBar />
+          <>{children}</>
+        </div>
       </body>
     </html>
   );
