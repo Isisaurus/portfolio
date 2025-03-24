@@ -1,15 +1,12 @@
-import Link from 'next/link';
-import { projects, publicLinks } from '@/data';
 import {
   RiNextjsLine,
   RiReactjsLine,
   RiTailwindCssLine,
-  RiCodeSSlashLine,
-  RiEyeLine,
-  RiLink,
 } from 'react-icons/ri';
 import { TbBrandTypescript } from 'react-icons/tb';
 import { SiSentry, SiSanity } from 'react-icons/si';
+import PublicProjectList from '@/components/PublicProjectList';
+import ProjectList from '@/components/ProjectList';
 
 export default function Home() {
   return (
@@ -76,85 +73,7 @@ export default function Home() {
         <p className="font-mono text-[0.8125rem]/6 font-medium tracking-widest text-pretty uppercase text-gray-600 p-5 border-b border-y-gray-950/5">
           My work
         </p>
-        <ul className="flex flex-col divide-y divide-gray-950/5" id="my-code">
-          {projects.map((project) => {
-            const {
-              id,
-              title,
-              subtitle,
-              description,
-              coverImg,
-              code,
-              preview,
-            } = project;
-
-            return (
-              <li key={id} className="md:grid md:grid-cols-[80px_1fr]">
-                <div className="decor max-md:hidden" />
-                <div className="mx-5 border-x border-gray-950/5">
-                  <div className="flex flex-col md:flex-row mx-5 border-l border-gray-950/5">
-                    <div className="flex-1">
-                      <div className="border-y border-gray-950/5 py-5">
-                        <h2 className="ml-5 font-mono font-semibold tracking-widest uppercase">
-                          {title}
-                        </h2>
-                        <p className="ml-5 font-mono text-xs/6 tracking-wide text-gray-600 max-w-[400px]">
-                          {subtitle}
-                        </p>
-                      </div>
-                      <p className="max-w-[400px] text-base/7 text-gray-600 p-5">
-                        {description}
-                      </p>
-                    </div>
-                    <div className="flex-1 decor p-2">
-                      <div className="bg-gray-200 p-2 w-full h-full min-h-[350px] flex">
-                        <div
-                          className="rounded-xl flex-1 bg-no-repeat bg-cover bg-center"
-                          style={{
-                            backgroundImage: `url('/images/${coverImg}')`,
-                          }}
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex flex-col md:flex-row md:justify-between gap-5 items-center border-t border-y-gray-950/5 p-5">
-                    <ul className="flex gap-3">
-                      <li>
-                        <RiNextjsLine className="size-5" />
-                      </li>
-                      <li>
-                        <RiReactjsLine className="size-5" />
-                      </li>
-                      <li>
-                        <RiTailwindCssLine className="size-5" />
-                      </li>
-                    </ul>
-                    <div className="flex gap-3">
-                      <Link
-                        href={code}
-                        target="_blank"
-                        referrerPolicy="no-referrer"
-                        className="gap-2 inline-flex items-center justify-center rounded-full px-4 py-2 text-sm/6 font-semibold text-gray-950 ring-1 ring-gray-950/10 hover:ring-gray-950/20"
-                      >
-                        <RiCodeSSlashLine className="size-5" />
-                        <span>code</span>
-                      </Link>
-                      <Link
-                        href={preview}
-                        target="_blank"
-                        referrerPolicy="no-referrer"
-                        className="gap-2 inline-flex items-center justify-center rounded-full px-4 py-2 text-sm/6 font-semibold bg-gray-950 text-white hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-950"
-                      >
-                        <RiEyeLine className="size-5" />
-                        <span>live preview</span>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+        <ProjectList />
       </section>
       <div className="decor h-5 w-full border-b border-gray-950/5"></div>
       <section className="my-15">
@@ -163,46 +82,7 @@ export default function Home() {
         </p>
         <div className="flex">
           <div className="w-20 border-b border-gray-950/5 max-md:hidden decor" />
-          <ul className="flex-1 flex flex-col">
-            {publicLinks.map((project) => {
-              const { id, title, href, description, subtitle } = project;
-
-              return (
-                <li key={id} className="border-b border-gray-950/5">
-                  <div className="flex divide-x divide-gray-950/5 border-b border-gray-950/5">
-                    <div className="w-5" />
-                    <div className="p-5 flex-1">
-                      <div className="flex gap-2 items-center justify-between flex-wrap">
-                        <p className="font-mono font-semibold tracking-widest uppercase">
-                          {title}
-                        </p>
-                        <Link
-                          href={href}
-                          target="_blank"
-                          referrerPolicy="no-referrer"
-                          className="gap-2 inline-flex items-center justify-center rounded-full px-4 py-2 text-sm/6 font-semibold text-gray-950 ring-1 ring-gray-950/10 hover:ring-gray-950/20 my-5"
-                        >
-                          <RiLink className="size-5" />
-                          <span>visit page</span>
-                        </Link>
-                      </div>
-                      <p className="font-mono text-xs/6 tracking-wide text-gray-600 max-w-[600px]">
-                        {subtitle}
-                      </p>
-                    </div>
-                    <div className="w-5" />
-                  </div>
-                  <div className="flex divide-x divide-gray-950/5">
-                    <div className="w-5" />
-                    <div className="flex-1 columns-md p-5">
-                      <p className="text-sm/6 text-gray-600">{description}</p>
-                    </div>
-                    <div className="w-5" />
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+          <PublicProjectList />
         </div>
         <div className="h-5 w-full decor border-b border-gray-950/5" />
       </section>
