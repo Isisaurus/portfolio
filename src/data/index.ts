@@ -1,8 +1,19 @@
+import { StackType } from '@/types';
+
 export const navItems: { title: string; href: string }[] = [
   {
     title: 'my code',
     href: '#my-code',
   },
+];
+
+export const favTech: { label: string; icon: StackType }[] = [
+  { label: 'React', icon: 'react' },
+  { label: 'Next.js', icon: 'next' },
+  { label: 'TypeScript', icon: 'typescript' },
+  { label: 'Tailwind CSS', icon: 'tailwind' },
+  { label: 'Sanity', icon: 'sanity' },
+  { label: 'Sentry', icon: 'sentry' },
 ];
 
 export const projects: {
@@ -13,6 +24,7 @@ export const projects: {
   description: string;
   preview: string;
   code: string;
+  stack: StackType[];
 }[] = [
   {
     id: 1,
@@ -23,6 +35,7 @@ export const projects: {
       'A full-stack Next app where users can vote and comment on city project ideas. Implemented Google OAuth for easy sign-up and sign-in. Embedded a Sanity studio for content pool management. Styled mobile-first using TailwindCSS. Utilizing React 19 forms with server actions.',
     preview: 'https://city-planner-five.vercel.app/',
     code: 'https://github.com/Isisaurus/city-planner',
+    stack: ['next', 'typescript', 'tailwind', 'sanity', 'sentry'],
   },
   {
     id: 2,
@@ -33,6 +46,7 @@ export const projects: {
       'This project is an out-of-date React app using CRA. Regardless, a fun use of Material UI for styled components to create a dynamic and engaging UI, Contentful for content management and delivery, SWR for filtering and pagination. This project tought me a great deal about data as state in React applications early in my carrier.',
     preview: 'https://tech-recruitment.vercel.app/',
     code: 'https://github.com/Isisaurus/tech-recruitment-website',
+    stack: ['react', 'materialui', 'contentful', 'swr'],
   },
 ];
 

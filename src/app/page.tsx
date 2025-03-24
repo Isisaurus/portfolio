@@ -10,6 +10,8 @@ import PublicProjectList from '@/components/PublicProjectList';
 import ProjectList from '@/components/ProjectList';
 import ContactLink from '@/components/ContactLink';
 import Link from 'next/link';
+import { favTech } from '@/data';
+import StackIcon from '@/components/StackIcon';
 
 export default function Home() {
   return (
@@ -53,34 +55,14 @@ export default function Home() {
         </p>
         <div>
           <ul className="flex flex-col md:flex-row md:items-center divide-y md:divide-x md:divide-y-0 divide-gray-950/5">
-            <li className="p-5 flex items-center gap-3">
-              <RiReactjsLine className="size-5 md:size-10" />
-              <span className="md:sr-only text-sm/6 font-medium">React</span>
-            </li>
-            <li className="p-5 flex items-center gap-3">
-              <RiNextjsLine className="size-5 md:size-10" />
-              <span className="md:sr-only text-sm/6 font-medium">Next.js</span>
-            </li>
-            <li className="p-5 flex items-center gap-3">
-              <RiTailwindCssLine className="size-5 md:size-10" />
-              <span className="md:sr-only text-sm/6 font-medium">
-                Tailwind CSS
-              </span>
-            </li>
-            <li className="p-5 flex items-center gap-3">
-              <TbBrandTypescript className="size-5 md:size-10" />
-              <span className="md:sr-only text-sm/6 font-medium">
-                TypeScript
-              </span>
-            </li>
-            <li className="p-5 flex items-center gap-3">
-              <SiSentry className="size-5 md:size-10" />
-              <span className="md:sr-only text-sm/6 font-medium">Sentry</span>
-            </li>
-            <li className="p-5 flex items-center gap-3">
-              <SiSanity className="size-5 md:size-10" />
-              <span className="md:sr-only text-sm/6 font-medium">Sanity</span>
-            </li>
+            {favTech.map((tech) => (
+              <li key={tech.label} className='p-5 flex items-center gap-3'>
+                <StackIcon name={tech.icon} className="size-5 md:size-10" />
+                <span className="md:sr-only text-sm/6 font-medium">
+                  {tech.label}
+                </span>
+              </li>
+            ))}
             <span className="decor flex-1 h-20 max-md:hidden"></span>
           </ul>
         </div>
