@@ -17,7 +17,8 @@ body {
 }
 
 a,
-button[type='button'] {
+button[type='button'],
+button[type='submit'] {
   @apply cursor-pointer;
 }
 

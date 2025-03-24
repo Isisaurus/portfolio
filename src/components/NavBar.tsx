@@ -1,16 +1,10 @@
 import Link from 'next/link';
 import React from 'react';
+import { navItems } from '@/data';
 
 const NavBar = () => {
-  const navItems: { title: string; href: string }[] = [
-    {
-      title: 'my code',
-      href: '#my-code',
-    },
-  ];
-
   return (
-    <header className="border-b border-b-neutral-200">
+    <header className="border-b border-b-neutral-200 hidden md:block">
       <nav>
         <ul className="flex p-5 gap-5 col-start-2 row-start-1 row-end-2 items-center justify-end text-md/6 capitalize">
           {navItems.map((navItem) => {

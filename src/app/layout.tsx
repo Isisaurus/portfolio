@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GoogleTagManager gtmId="GTM-5949KJXS" />
-      <body className={`bg-neutral-50 min-h-screen flex`}>
+      <body className={`bg-neutral-50 min-h-screen flex flex-col md:flex-row`}>
         <Socials />
         <div className="flex flex-col w-full">
           <NavBar />
