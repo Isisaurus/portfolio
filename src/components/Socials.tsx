@@ -8,7 +8,7 @@ import {
 
 const Socials = () => {
   return (
-    <ul className="flex gap-2 flex-col p-2 md:p-5 col-start-1 col-end-2 row-span-full border-r border-gray-950/5 text-gray-600">
+    <ul className="flex gap-2 flex-row md:flex-col md:p-5 border-b md:border-r border-gray-950/5 text-gray-950">
       <li>
         <Link
           href="https://www.linkedin.com/in/diana-vitanyi-49211a15a/"
