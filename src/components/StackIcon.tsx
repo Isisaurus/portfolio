@@ -1,13 +1,13 @@
 import { StackType } from '@/types';
 import { ReactElement } from 'react';
 import { RiNextjsLine, RiReactjsLine, RiTailwindCssLine } from 'react-icons/ri';
+import { TbBrandTypescript } from "react-icons/tb";
 import {
   SiMui,
   SiSentry,
   SiSanity,
   SiContentful,
   SiSwr,
-  SiTypescript,
 } from 'react-icons/si';
 
 interface StackIconProps {
@@ -25,7 +25,7 @@ export default function StackIcon({ name, className }: StackIconProps) {
     sentry: <SiSentry className={className} />,
     contentful: <SiContentful className={className} />,
     swr: <SiSwr className={className} />,
-    typescript: <SiTypescript className={className} />,
+    typescript: <TbBrandTypescript className={className} />,
   };
 
   return icons[name];

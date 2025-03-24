@@ -5,7 +5,7 @@ import StackIcon from './StackIcon';
 
 export default function ProjectList() {
   return (
-    <ul className="flex flex-col divide-y divide-gray-950/5" id="my-code">
+    <ul className="flex flex-col divide-y divide-gray-950/5" id="my-work">
       {projects.map((project) => {
         const {
           id,

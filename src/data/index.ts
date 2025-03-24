@@ -2,9 +2,13 @@ import { StackType } from '@/types';
 
 export const navItems: { title: string; href: string }[] = [
   {
-    title: 'my code',
-    href: '#my-code',
+    title: 'my work',
+    href: '#my-work',
   },
+  {
+    title: 'contact me',
+    href: '#contact',
+  }
 ];
 
 export const favTech: { label: string; icon: StackType }[] = [
