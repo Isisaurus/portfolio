@@ -19,7 +19,7 @@ export default function ProjectList() {
           <li key={id} className="md:grid md:grid-cols-[80px_1fr]">
             <div className="decor max-md:hidden" />
             <div className="mx-5 border-x border-gray-950/5">
-              <div className="flex flex-col md:flex-row mx-5 border-l border-gray-950/5">
+              <div className="flex flex-col md:flex-row mx-2 md:mx-5 border-l border-r md:border-r-0 border-gray-950/5">
                 <div className="flex-1">
                   <div className="border-y border-gray-950/5 py-5">
                     <h2 className="ml-5 font-mono font-semibold tracking-widest uppercase">
@@ -33,7 +33,7 @@ export default function ProjectList() {
                     {description}
                   </p>
                 </div>
-                <div className="flex-1 decor p-2">
+                <div className="flex-1 decor p-2 border-t border-gray-950/5 md:border-0">
                   <div className="bg-gray-200 p-2 w-full h-full min-h-[350px] flex">
                     <div
                       className="rounded-xl flex-1 bg-no-repeat bg-cover bg-center"
@@ -56,7 +56,7 @@ export default function ProjectList() {
                     <RiTailwindCssLine className="size-5" />
                   </li>
                 </ul>
-                <div className="flex gap-3">
+                <div className="flex flex-wrap gap-1 md:gap-3 items-center justify-center">
                   <Link
                     href={code}
                     target="_blank"
