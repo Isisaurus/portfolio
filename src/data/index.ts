@@ -8,7 +8,7 @@ export const navItems: { title: string; href: string }[] = [
   {
     title: 'contact me',
     href: '#contact',
-  }
+  },
 ];
 
 export const favTech: { label: string; icon: StackType }[] = [

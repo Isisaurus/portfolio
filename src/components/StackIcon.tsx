@@ -1,14 +1,8 @@
 import { StackType } from '@/types';
 import { ReactElement } from 'react';
 import { RiNextjsLine, RiReactjsLine, RiTailwindCssLine } from 'react-icons/ri';
-import { TbBrandTypescript } from "react-icons/tb";
-import {
-  SiMui,
-  SiSentry,
-  SiSanity,
-  SiContentful,
-  SiSwr,
-} from 'react-icons/si';
+import { TbBrandTypescript } from 'react-icons/tb';
+import { SiMui, SiSentry, SiSanity, SiContentful, SiSwr } from 'react-icons/si';
 
 interface StackIconProps {
   name: StackType;
