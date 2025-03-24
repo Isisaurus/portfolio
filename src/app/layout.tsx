@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleTagManager } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 import NavBar from '@/components/NavBar';
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   robots: {
     index: false,
     follow: false,
-  }
+  },
 };
 
 export default function RootLayout({

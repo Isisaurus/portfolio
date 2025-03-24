@@ -68,7 +68,7 @@ export default function Page() {
 
         <p>
           Next, look for the error on the{' '}
-          <a href="https://isisaurus.sentry.io/issues/?project=4509032178581584">
+          <a href="https://foundever.sentry.io/issues/?project=4508935855800400">
             Issues Page
           </a>
           .
