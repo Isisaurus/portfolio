@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GoogleTagManager } from '@next/third-parties/google'
 import './globals.css';
 import NavBar from '@/components/NavBar';
 import Socials from '@/components/Socials';
@@ -22,6 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="GTM-5949KJXS" />
       <body className={`bg-neutral-50 min-h-screen flex`}>
         <Socials />
         <div className="flex flex-col w-full">
