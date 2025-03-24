@@ -1,11 +1,6 @@
 import {
-  RiNextjsLine,
-  RiReactjsLine,
-  RiTailwindCssLine,
   RiWhatsappLine,
 } from 'react-icons/ri';
-import { TbBrandTypescript } from 'react-icons/tb';
-import { SiSentry, SiSanity } from 'react-icons/si';
 import PublicProjectList from '@/components/PublicProjectList';
 import ProjectList from '@/components/ProjectList';
 import ContactLink from '@/components/ContactLink';
