@@ -5,7 +5,14 @@ import Socials from '@/components/Socials';
 
 export const metadata: Metadata = {
   title: 'Diana Vitanyi',
-  description: 'Web Developer portfolio of Diana Vitanyi.',
+  description: 'Portfolio of Diana Vitanyi.',
+  icons: {
+    icon: '/favicon.svg',
+  },
+  robots: {
+    index: false,
+    follow: false,
+  }
 };
 
 export default function RootLayout({
