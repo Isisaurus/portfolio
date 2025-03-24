@@ -23,7 +23,7 @@ export default function Home() {
             </h1>
           </div>
           <div className="md:border-l md:border-r md:mx-2.5 p-5 border-gray-950/5 flex flex-col">
-            <p className="max-w-[450px] text-lg/7 font-medium text-pretty text-gray-600 self-end">
+            <p className="max-w-[450px] text-lg/7 font-medium text-pretty text-gray-600 md:self-end">
               Hello, my name is Diana. <br /> I am a software developer with a
               passion to build immersive and user-friendly applications.
               <br />

@@ -19,7 +19,7 @@ export default function ProjectList() {
           <li key={id} className="md:grid md:grid-cols-[80px_1fr]">
             <div className="decor max-md:hidden" />
             <div className="mx-5 border-x border-gray-950/5">
-              <div className="flex flex-col md:flex-row mx-2 md:mx-5 border-l border-r md:border-r-0 border-gray-950/5">
+              <div className="flex flex-col md:flex-row mx-2.5 md:mx-5 border-l border-r md:border-r-0 border-gray-950/5">
                 <div className="flex-1">
                   <div className="border-y border-gray-950/5 py-5">
                     <h2 className="ml-5 font-mono font-semibold tracking-widest uppercase">
