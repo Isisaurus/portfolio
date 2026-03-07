@@ -57,26 +57,44 @@ export const projects: {
 export const publicLinks: {
   id: number;
   title: string;
-  href: string;
+  href: string[];
   description: string;
   subtitle: string;
 }[] = [
-  {
+    {
     id: 1,
-    title: 'Device Switch Solution',
+    title: 'Device Comparison Tool for KPN NL',
     subtitle:
-      'Self-service embedded front-end SaaS application to help users migrate their information from their old phone to the new one.',
+      'Client-side embedded application helping users find the best device through guided recommendations and detailed comparisons.',
     description:
-      "A React project created using Vite. As a key feature, the app utilizes the URL query to track the user's journey through the process. Achieving content reusability was a key goal on the project. This goal was completed beyond expectations in collaboration with a back-end developer resulting in producing 40% less content. The project is styled using TailwindCSS with highly customizable themes per client configuration. The code base queries data from a REST API using React Query and its data caching for an optimized performance. The project had high level acceptance criterias when it comes to accessibility and SEO.",
-    href: 'https://www.telekom.de/hilfe/smartphone-wechselassistent',
+      'A React application embedded within a hybrid webshop environment. The tool guides users through a short quiz to understand their needs and generates a ranked device recommendation based on their responses. It consumes third-party data streams to dynamically render device specifications and highlight meaningful differences between models. The project supported multiple configurations of the same application to meet specific client requirements across deployments. Development was carried out in close collaboration with the KPN team, including UX designers, product managers, frontend and backend engineers, data specialists, and security teams. The project followed agile, sprint-based development cycles with fast iteration and short turnaround times.',
+    href: ['https://www.kpn.com/shop/mobiel/telefoons'],
   },
   {
     id: 2,
+    title: 'Device Switch Solution',
+    subtitle:
+      'Self-service embedded SaaS application helping users seamlessly migrate their data from an old device to a new one.',
+    description:
+      'A React application built with Vite and designed as an embedded front-end SaaS solution for telecom providers, currently serving KPN (NL) and Telekom (DE). The application guides users step-by-step through the device migration process, using URL query parameters to track progress and maintain the user journey. A major focus of the project was content reusability and maintainability; through close collaboration with a back-end developer, we reduced the amount of required content by approximately 40%. The UI is built with TailwindCSS and supports highly customizable theming to adapt to different client branding and configuration requirements. The application consumes data from a REST API using React Query, leveraging caching strategies to improve performance and responsiveness. Accessibility and SEO were key acceptance criteria throughout development.',
+    href: ['https://www.telekom.de/hilfe/smartphone-wechselassistent', 'https://www.kpn.com/service/mobiel/overstaphulp'],
+  },
+  {
+    id: 3,
+    title: 'Device Compatibility Checker',
+    subtitle:
+      'Embedded search tool allowing users to verify whether their mobile device is compatible with a medical application.',
+    description:
+      "A client-side rendered embedded application developed for Abbott Germany to help users quickly check whether their mobile device is compatible with the FreeStyle Libre 3 ecosystem. The tool appears as a modal within multiple customer-facing websites, allowing users to search for their device and instantly receive compatibility results. The project required close collaboration with Abbott’s international teams, including UX designers, product managers, and external engineering teams, to ensure seamless integration across several web platforms. Given the medtech context, the application was developed under strict accessibility standards and a regulated release process, using serialized releases aligned with Veeva approval codes. In addition to the embedded experience, the project included building a dedicated AWS-hosted webpage used to redirect mobile users seeking self-service support for the FreeStyle Libre 3 application. The solution now serves hundreds of users daily across Germany.",
+      href: ['https://app.freestylelibre.de/']
+  },
+  {
+    id: 4,
     title: 'Multimedia Information Hub',
     subtitle:
-      'Static generated web pages created by a Next application to effectively collect and organize video content for agents.',
+      'Static site generated platform for organizing and delivering instructional video content for customer support agents.',
     description:
-      'The application is styled using TailwindCSS, hosted via AWS and has an optimized CI/CD pipeline. With a 94 on lighthouse accessibility score, the application was delivered within a tight deadline, achieving a very happy client. :) Thanks to the information architecture and the high performance, the traffic on the pages are exceeding both internal and external expectations resulting in plans to expand the hub.',
-    href: 'https://kpn-wifi.customersaas.com/hulp-videos/',
-  },
+      "A Next.js application that statically generates pages to efficiently collect, structure, and deliver multimedia content. The platform enables support agents to quickly access instructional videos through a clear information architecture and fast page loads. The interface is styled using TailwindCSS and deployed on AWS with an optimized CI/CD pipeline to support reliable updates. Despite a tight delivery timeline, the project achieved a Lighthouse accessibility score of 94. Thanks to its performance and usability, the platform quickly exceeded both internal and external traffic expectations and is now planned for further expansion.",
+    href: ['https://kpn-wifi.customersaas.com/hulp-videos/'],
+  }
 ];

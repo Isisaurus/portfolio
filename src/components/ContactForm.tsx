@@ -22,7 +22,7 @@ export default function ContactForm({ action }: FormProps) {
           type="email"
           id="email"
           name="email"
-          className="bg-transparent text-gray-950 text-sm border border-gray-950/5 focus-within:border-gray-950/20 focus-visible:border-gray-950/20 py-2 px-3 w-full"
+          className="bg-transparent text-gray-950 text-sm border border-gray-950/10 focus-within:border-gray-950/20 focus-visible:border-gray-950/20 py-2 px-3 w-full"
           required
         />
       </div>
@@ -37,7 +37,7 @@ export default function ContactForm({ action }: FormProps) {
           type="text"
           id="subject"
           name="subject"
-          className="bg-transparent text-gray-950 text-sm border border-gray-950/5 focus-within:border-gray-950/20 focus-visible:border-gray-950/20 py-2 px-3 w-full"
+          className="bg-transparent text-gray-950 text-sm border border-gray-950/10 focus-within:border-gray-950/20 focus-visible:border-gray-950/20 py-2 px-3 w-full"
           required
         />
       </div>
@@ -52,7 +52,7 @@ export default function ContactForm({ action }: FormProps) {
           id="message"
           name="message"
           rows={6}
-          className="bg-transparent text-gray-950 text-sm border border-gray-950/5 focus-within:border-gray-950/20 focus-visible:border-gray-950/20 py-2 px-3 w-full"
+          className="bg-transparent text-gray-950 text-sm border border-gray-950/10 focus-within:border-gray-950/20 focus-visible:border-gray-950/20 py-2 px-3 w-full"
         />
       </div>
       <ContactSubmitButton />
