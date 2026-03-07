@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Diana Vitanyi',
   description: 'Portfolio of Diana Vitanyi.',
   icons: {
-    icon: '/favicon.svg',
+    icon: '/favicon.ico',
   },
   robots: {
     index: false,
