@@ -3,36 +3,8 @@ import PublicProjectList from '@/components/PublicProjectList';
 import ProjectList from '@/components/ProjectList';
 import ContactLink from '@/components/ContactLink';
 import Link from 'next/link';
-import { favTech } from '@/data';
-import StackIcon from '@/components/StackIcon';
-import ContactForm from '@/components/ContactForm';
 
 export default function Home() {
-  const ContactFormAction = async (formData: FormData) => {
-    'use server';
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      message: formData.get('message'),
-    };
-
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-
-      if (res) {
-        console.log('all ok');
-      } else {
-        throw new Error('Failed to send message');
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
   return (
     <main className="flex-1 flex flex-col">
       <section className="border-t border-b border-gray-950/5 my-5">
@@ -42,15 +14,23 @@ export default function Home() {
             <h1 className="mt-2 text-6xl tracking-tighter sm:text-8xl text-pretty">
               Diana Vitanyi
             </h1>
+            <p className="mt-4 font-mono text-[0.8125rem]/6 font-medium tracking-widest text-pretty uppercase text-gray-600">
+              Full-Stack Developer · React · TypeScript
+            </p>
           </div>
           <div className="md:border-l md:border-r md:mx-2.5 p-5 border-gray-950/5 flex flex-col">
-            <p className="max-w-[450px] text-lg/7 font-medium text-pretty text-gray-600 md:self-end">
-              Hello, my name is Diana. <br /> I am a software developer with a
-              passion to build immersive and user-friendly applications.
-              <br />
-              Are you looking for a creative problem solver who thinks in code?{' '}
-              <span>Let&apos;s get in touch!</span>
-            </p>
+            <div className="max-w-[450px] md:self-end">
+              <p className="text-xl/8 font-medium text-pretty text-gray-950">
+                I&apos;m interested in how things work, feel and come together.
+              </p>
+              <p className="mt-4 text-base/7 font-medium text-pretty text-gray-600">
+                I like understanding how the pieces of an application fit
+                together: from APIs and data flows to the interface people
+                actually use. When things aren&apos;t clearly defined, I tend to
+                dig into the details, question assumptions and work out what the
+                system and its constraints actually support.
+              </p>
+            </div>
             <div className="flex gap-3 mt-5 items-center">
               <ContactLink />
               <span>or</span>
@@ -68,34 +48,9 @@ export default function Home() {
           <div className="decor md:hidden w-full h-10" />
         </div>
       </section>
-      <section className="border-t border-b border-y-gray-950/5 my-10">
-        <p className="font-mono text-[0.8125rem]/6 font-medium tracking-widest text-pretty uppercase text-gray-600 p-5 border-b border-y-gray-950/5">
-          My current favorites
-        </p>
-        <div>
-          <ul className="flex flex-col md:flex-row md:items-center divide-y md:divide-x md:divide-y-0 divide-gray-950/5">
-            {favTech.map((tech) => (
-              <li key={tech.label} className="p-5 flex items-center gap-3">
-                <StackIcon name={tech.icon} className="size-5 md:size-10" />
-                <span className="md:sr-only text-sm/6 font-medium">
-                  {tech.label}
-                </span>
-              </li>
-            ))}
-            <span className="decor flex-1 h-20 max-md:hidden"></span>
-          </ul>
-        </div>
-      </section>
-      <section className="border-t border-b border-y-gray-950/5 mt-5">
-        <p className="font-mono text-[0.8125rem]/6 font-medium tracking-widest text-pretty uppercase text-gray-600 p-5 border-b border-y-gray-950/5">
-          My work
-        </p>
-        <ProjectList />
-      </section>
-      <div className="decor h-5 w-full border-b border-gray-950/5"></div>
-      <section className="my-15">
+      <section id="selected-work" className="my-15">
         <p className="font-mono text-[0.8125rem]/6 font-medium tracking-widest text-pretty uppercase text-gray-600 p-5 border-b border-t border-y-gray-950/5">
-          Public Projects I recently worked on
+          Selected work
         </p>
         <div className="flex">
           <div className="w-20 border-b border-gray-950/5 max-md:hidden decor" />
@@ -103,28 +58,15 @@ export default function Home() {
         </div>
         <div className="h-5 w-full decor border-b border-gray-950/5" />
       </section>
-      <section className="border-t border-b border-gray-950/5 my-10">
+      <div className="decor h-5 w-full border-b border-gray-950/5"></div>
+      <section
+        id="side-projects"
+        className="border-t border-b border-y-gray-950/5 mt-5"
+      >
         <p className="font-mono text-[0.8125rem]/6 font-medium tracking-widest text-pretty uppercase text-gray-600 p-5 border-b border-y-gray-950/5">
-          Contact me
+          Side projects
         </p>
-        <div className="max-w-screen-xl mx-auto flex">
-          <div className="decor max-md:hidden w-20" />
-          <div
-            className="md:border-l md:border-r md:mx-2.5 p-5 border-gray-950/5 flex flex-col flex-1 items-center justify-center"
-            id="contact"
-          >
-            <div className="max-w-screen-sm">
-              <p className="text-lg/7 font-medium text-pretty text-gray-600 text-center my-5">
-                Need help with a project? Got feedback on my work? Just want to
-                say hi? I&apos;d love to hear from you—drop me a message, and
-                I&apos;ll get back to you soon!
-              </p>
-            </div>
-            <div className="my-10 max-w-screen-md w-full p-5">
-              <ContactForm action={ContactFormAction} />
-            </div>
-          </div>
-        </div>
+        <ProjectList />
       </section>
     </main>
   );
