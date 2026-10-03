@@ -45,7 +45,14 @@ export default function PublicProjectList() {
             <div className="flex divide-x divide-gray-950/5">
               <div className="w-5" />
               <div className="flex-1 columns-md p-5">
-                <p className="text-sm/6 text-gray-600">{description}</p>
+                <div className="space-y-4 text-sm/6 text-gray-600">
+                  {description.split(/<br\s*\/?>/i).map((paragraph, index) => (
+                    <p
+                      key={index}
+                      dangerouslySetInnerHTML={{ __html: paragraph }}
+                    />
+                  ))}
+                </div>
               </div>
               <div className="w-5" />
             </div>

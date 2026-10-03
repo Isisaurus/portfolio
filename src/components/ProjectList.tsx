@@ -1,22 +1,13 @@
 import { projects } from '@/data';
 import Link from 'next/link';
 import { RiCodeSSlashLine, RiEyeLine } from 'react-icons/ri';
-import StackIcon from './StackIcon';
 
 export default function ProjectList() {
   return (
-    <ul className="flex flex-col divide-y divide-gray-950/5" id="my-work">
+    <ul className="flex flex-col divide-y divide-gray-950/5">
       {projects.map((project) => {
-        const {
-          id,
-          title,
-          subtitle,
-          description,
-          coverImg,
-          code,
-          preview,
-          stack,
-        } = project;
+        const { id, title, subtitle, description, coverImg, code, preview } =
+          project;
 
         return (
           <li key={id} className="md:grid md:grid-cols-[80px_1fr]">
@@ -47,14 +38,7 @@ export default function ProjectList() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col md:flex-row md:justify-between gap-5 items-center border-t border-y-gray-950/5 p-5">
-                <ul className="flex gap-3">
-                  {stack.map((tech) => (
-                    <li key={tech}>
-                      <StackIcon name={tech} className="size-5 md:size-7" />
-                    </li>
-                  ))}
-                </ul>
+              <div className="flex flex-col md:flex-row md:justify-end gap-5 items-center border-t border-y-gray-950/5 p-5">
                 <div className="flex flex-wrap gap-1 md:gap-3 items-center justify-center">
                   <Link
                     href={code}
