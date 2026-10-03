@@ -58,6 +58,12 @@ export default function RootLayout({
     <html lang="en">
       <GoogleTagManager gtmId="GTM-5949KJXS" />
       <body className={`bg-neutral-50 min-h-screen flex flex-col md:flex-row`}>
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-100 focus:rounded-md focus:bg-neutral-50 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-gray-950 focus:shadow-sm focus:ring-2 focus:ring-gray-950"
+        >
+          Skip to main content
+        </a>
         <Socials />
         <div className="flex flex-col w-full">
           <NavBar />

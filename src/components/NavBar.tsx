@@ -4,8 +4,8 @@ import { navItems } from '@/data';
 
 const NavBar = () => {
   return (
-    <header className="border-b border-b-neutral-200 hidden md:block">
-      <nav>
+    <header className="border-b border-b-neutral-200">
+      <nav aria-label="Page sections">
         <ul className="flex p-5 gap-5 col-start-2 row-start-1 row-end-2 items-center justify-end text-md/6 capitalize">
           {navItems.map((navItem) => {
             const { href, title } = navItem;

@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="flex-1 flex flex-col">
+    <main id="main" tabIndex={-1} className="flex-1 flex flex-col outline-none">
       <section className="border-t border-b border-gray-950/5 my-5">
         <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row md:divide-y-0 divide-y divide-y-gray-950/5">
           <div className="decor max-md:hidden w-20" />
@@ -38,20 +38,23 @@ export default function Home() {
                 href="https://wa.me/qr/4N7ZUA26FB6VN1"
                 target="_blank"
                 referrerPolicy="no-referrer"
+                aria-label="WhatsApp"
                 className="gap-2 inline-flex items-center justify-center rounded-full p-2 text-sm/6 font-semibold text-gray-950 ring-1 ring-gray-950/10 hover:ring-gray-950/20"
               >
-                <RiWhatsappLine className="size-5" />
-                <span className="sr-only">whatsapp</span>
+                <RiWhatsappLine className="size-5" aria-hidden="true" />
               </Link>
             </div>
           </div>
           <div className="decor md:hidden w-full h-10" />
         </div>
       </section>
-      <section id="selected-work" className="my-15">
-        <p className="font-mono text-[0.8125rem]/6 font-medium tracking-widest text-pretty uppercase text-gray-600 p-5 border-b border-t border-y-gray-950/5">
+      <section id="selected-work" className="my-15" aria-labelledby="selected-work-heading">
+        <h2
+          id="selected-work-heading"
+          className="font-mono text-[0.8125rem]/6 font-medium tracking-widest text-pretty uppercase text-gray-600 p-5 border-b border-t border-y-gray-950/5"
+        >
           Selected work
-        </p>
+        </h2>
         <div className="flex">
           <div className="w-20 border-b border-gray-950/5 max-md:hidden decor" />
           <PublicProjectList />
@@ -62,10 +65,14 @@ export default function Home() {
       <section
         id="side-projects"
         className="border-t border-b border-y-gray-950/5 mt-5"
+        aria-labelledby="side-projects-heading"
       >
-        <p className="font-mono text-[0.8125rem]/6 font-medium tracking-widest text-pretty uppercase text-gray-600 p-5 border-b border-y-gray-950/5">
+        <h2
+          id="side-projects-heading"
+          className="font-mono text-[0.8125rem]/6 font-medium tracking-widest text-pretty uppercase text-gray-600 p-5 border-b border-y-gray-950/5"
+        >
           Side projects
-        </p>
+        </h2>
         <ProjectList />
       </section>
     </main>
