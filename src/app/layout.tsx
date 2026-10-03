@@ -4,16 +4,46 @@ import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 import Socials from '@/components/Socials';
 
+const siteUrl = 'https://diana-vitanyi.vercel.app';
+const title = 'Diana Vitanyi · Full-Stack Developer · React · TypeScript';
+const description =
+  'Full-stack developer with 5 years of experience building production applications, focused on React and TypeScript.';
+
 export const metadata: Metadata = {
-  title: 'Diana Vitanyi · Full-Stack Developer · React · TypeScript',
-  description:
-    'Full-Stack Developer with 5 years of experience building production applications, focused on React and TypeScript.',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: title,
+    template: '%s · Diana Vitanyi',
+  },
+  description,
+  applicationName: 'Diana Vitanyi',
+  authors: [{ name: 'Diana Vitanyi', url: siteUrl }],
+  creator: 'Diana Vitanyi',
   icons: {
     icon: '/favicon.ico',
   },
   robots: {
     index: false,
     follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    url: siteUrl,
+    siteName: 'Diana Vitanyi',
+    locale: 'en',
+    title,
+    description,
+  },
+  twitter: {
+    card: 'summary',
+    title,
+    description,
   },
 };
 
