@@ -1,7 +1,7 @@
 
 This repository is my personal portfolio website deployed to [https://diana-vitanyi.vercel.app/](https://diana-vitanyi.vercel.app/). The page contains some of my personal projects and public projects I worked on recently.
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app), with TypeScript and TailwindCSS v4.
+This is a [Next.js](https://nextjs.org) 16 project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app), with TypeScript and TailwindCSS v4. It requires Node.js 22.12 or later.
 
 To run the development server:
 
