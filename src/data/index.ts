@@ -1,3 +1,14 @@
+export const navItems: { title: string; href: string }[] = [
+  {
+    title: `Selected work`,
+    href: `#selected-work`,
+  },
+  {
+    title: `Side projects`,
+    href: `#side-projects`,
+  },
+];
+
 export const projects: {
   id: number;
   title: string;

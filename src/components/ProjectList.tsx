@@ -12,7 +12,7 @@ export default function ProjectList() {
         return (
           <li key={id} className="md:grid md:grid-cols-[80px_1fr]">
             <div className="decor max-md:hidden" />
-            <div className="mx-5 border-x border-gray-950/5">
+            <div className="ml-5 mr-10 border-x border-gray-950/5">
               <div className="flex flex-col md:flex-row mx-2.5 md:mx-5 border-l border-r md:border-r-0 border-gray-950/5">
                 <div className="flex-1">
                   <div className="border-y border-gray-950/5 py-5">
@@ -53,7 +53,7 @@ export default function ProjectList() {
                     href={preview}
                     target="_blank"
                     referrerPolicy="no-referrer"
-                    className="gap-2 inline-flex items-center justify-center rounded-full px-4 py-2 text-sm/6 font-semibold bg-gray-950 text-white hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-950"
+                    className="gap-2 inline-flex items-center justify-center rounded-full px-4 py-2 text-sm/6 font-semibold text-gray-950 ring-1 ring-gray-950/10 hover:ring-gray-950/20"
                   >
                     <RiEyeLine className="size-5" />
                     <span>live preview</span>

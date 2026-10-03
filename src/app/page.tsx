@@ -48,22 +48,25 @@ export default function Home() {
           <div className="decor md:hidden w-full h-10" />
         </div>
       </section>
-      <section className="border-t border-b border-y-gray-950/5 mt-5">
-        <p className="font-mono text-[0.8125rem]/6 font-medium tracking-widest text-pretty uppercase text-gray-600 p-5 border-b border-y-gray-950/5">
-          My work
-        </p>
-        <ProjectList />
-      </section>
-      <div className="decor h-5 w-full border-b border-gray-950/5"></div>
-      <section className="my-15">
+      <section id="selected-work" className="my-15">
         <p className="font-mono text-[0.8125rem]/6 font-medium tracking-widest text-pretty uppercase text-gray-600 p-5 border-b border-t border-y-gray-950/5">
-          Public Projects I recently worked on
+          Selected work
         </p>
         <div className="flex">
           <div className="w-20 border-b border-gray-950/5 max-md:hidden decor" />
           <PublicProjectList />
         </div>
         <div className="h-5 w-full decor border-b border-gray-950/5" />
+      </section>
+      <div className="decor h-5 w-full border-b border-gray-950/5"></div>
+      <section
+        id="side-projects"
+        className="border-t border-b border-y-gray-950/5 mt-5"
+      >
+        <p className="font-mono text-[0.8125rem]/6 font-medium tracking-widest text-pretty uppercase text-gray-600 p-5 border-b border-y-gray-950/5">
+          Side projects
+        </p>
+        <ProjectList />
       </section>
     </main>
   );

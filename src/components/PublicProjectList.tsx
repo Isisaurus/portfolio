@@ -11,7 +11,7 @@ export default function PublicProjectList() {
         return (
           <li key={id} className="border-b border-gray-950/5">
             <div className="flex divide-x divide-gray-950/5 border-b border-gray-950/5">
-              <div className="w-5" />
+              <div className="w-10" />
               <div className="p-5 flex-1">
                 <div className="flex gap-2 items-center justify-between flex-wrap">
                   <p className="font-mono font-semibold tracking-widest uppercase">
@@ -40,10 +40,10 @@ export default function PublicProjectList() {
                   {subtitle}
                 </p>
               </div>
-              <div className="w-5" />
+              <div className="w-10" />
             </div>
             <div className="flex divide-x divide-gray-950/5">
-              <div className="w-5" />
+              <div className="w-10" />
               <div className="flex-1 columns-md p-5">
                 <div className="space-y-4 text-sm/6 text-gray-600">
                   {description.split(/<br\s*\/?>/i).map((paragraph, index) => (
@@ -54,7 +54,7 @@ export default function PublicProjectList() {
                   ))}
                 </div>
               </div>
-              <div className="w-5" />
+              <div className="w-10" />
             </div>
           </li>
         );
